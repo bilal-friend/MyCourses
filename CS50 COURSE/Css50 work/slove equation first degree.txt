@@ -1,0 +1,16 @@
+ #include <stdio.h>
+ #include <cs50.h>
+ #include <math.h>
+
+ int main (void){
+
+ printf("        - this program help you to calcul equation first degree \n it's write like this : ax+b=c \n ");
+ printf("please \n");
+ double A =get_double(" Pease ,Enter a ");
+double B =get_double(" and Enter b ");
+ double C =get_double("and Enter c ");
+ double s=(C-B)/A;
+
+ printf("x = %f \n",s);
+
+ }

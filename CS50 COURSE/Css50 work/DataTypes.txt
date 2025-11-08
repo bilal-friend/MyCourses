@@ -1,0 +1,23 @@
+ #include <stdio.h>
+ #include <cs50.h>
+ #include <math.h>
+  int main (void){
+
+       int x=get_float("x:");
+       int y=get_float("y:");
+
+       printf("                %.50f \n ", (double)x/ (double)y);
+
+
+  }
+
+
+     // DATA-Types
+
+       // 1. bool (true,false) ==> 1 byte
+       // 2. int    ==> 4 byte
+       // 3. long   ==> 8 byte
+       // 4. float  ==> 4 byte
+       // 5. double ==> 8 byte
+       // 6. char   ==> 1 byte
+       // 7. string ==> ? byte (we dont know , it depends ! )

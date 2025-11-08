@@ -1,0 +1,59 @@
+#include <stdio.h>
+ #include <cs50.h>
+ #include <ctype.h>
+ #include <string.h>
+ #include <stdlib.h>
+
+
+
+    int main (void){
+
+      char* s = get_string(" S : ");
+      char* t = malloc(strlen(s)+1) ;
+
+      if(t==NULL){
+         printf("There is no space to run the program");
+         return 1 ;
+      }
+
+      for (int i=0 ; i<strlen(s)+1;i++){
+         t[i]=s[i];
+      }
+
+
+      t[0]= toupper(t[0]);
+      printf(" S : %s  || T : %s \n", s ,t);
+
+      free(t);
+
+
+    }
+-----------------------------------------------------------------------------------------------------------------------------
+ #include <stdio.h>
+ #include <cs50.h>
+ #include <ctype.h>
+ #include <string.h>
+ #include <stdlib.h>
+
+
+
+    int main (void){
+
+      char* s = get_string(" S : ");
+      char* t = malloc(strlen(s)+1) ;
+
+      if(t==NULL){
+         printf("There is no space to run the program");
+         return 1 ;
+      }
+
+     strcpy(t,s);
+
+
+      t[0]= toupper(t[0]);
+      printf(" S : %s  || T : %s \n", s ,t);
+
+      free(t);
+
+
+    }

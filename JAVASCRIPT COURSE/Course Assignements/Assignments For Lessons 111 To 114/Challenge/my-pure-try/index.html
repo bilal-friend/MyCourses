@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge Espisode 114</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .form {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+      }
+      .form,
+      .result {
+        width: 70vw;
+        max-width: 700px;
+        margin: 30px;
+        background: #eee;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      input {
+        padding: 10px;
+        font-size: 20px;
+        width: 75%;
+        border: none;
+        border-radius: 6px;
+      }
+      button {
+        border: none;
+        font-family: cursive;
+        background: rgb(255, 81, 0);
+        color: white;
+        padding: 7px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .result {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+      }
+      .taskEle {
+        background: white;
+        padding: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        position: relative;
+      }
+      .taskEle::before {
+        content: "✓ Done";
+        color: #5db801;
+        font-family: cursive;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+      }
+      .taskEle:hover {
+        opacity: 0.5;
+      }
+      .taskEle:hover::before {
+        display: block;
+      }
+      .dE {
+        color: white;
+        background: rgb(255, 81, 0);
+        padding: 5px;
+        border-radius: 4px;
+        font-size: 14px;
+        position: absolute;
+        right: 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="form">
+      <input type="text" />
+      <button>Add Task</button>
+    </div>
+    <div class="result"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

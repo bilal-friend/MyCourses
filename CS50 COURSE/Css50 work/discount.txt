@@ -1,0 +1,26 @@
+#include <stdio.h>
+ #include <cs50.h>
+ #include <math.h>
+
+float discount(float regular , int percent);
+int main (void){
+
+ float regular=get_float("        regular price :                         (Dirham Marocain DH) \n");
+ int percent =get_int("               enter sale percent :   \n");
+  discount(regular , percent );
+
+
+
+// .1 for nubmer before commu and .2f
+}
+
+
+
+
+float discount(float regular , int percent){
+
+
+
+ printf("    Sale Price :                    %.1f DH \n" ,regular *  (100 - percent)/100);
+ return regular *  (percent * 0.01 ) ;
+}

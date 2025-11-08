@@ -1,0 +1,129 @@
+.assign-1-shape-1 {
+  width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: blueviolet;
+}
+.assign-1-shape-2 {
+  background-color: hsla(271, 76%, 53%, 0.5);
+  width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+}
+.assign-1-shape-3 {
+  background-color: rgba(138, 43, 226, 0.3);
+  width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+}
+.assign-2-shape-1 {
+  width: 400px;
+  background-image: url("css-assignment-5-8.png");
+  height: 400px;
+  margin: 10px auto;
+  background-color: #eee;
+  background-repeat: no-repeat;
+}
+.assign-2-shape-2 {
+  width: 400px;
+  background-image: url("css-assignment-5-8.png");
+  height: 400px;
+  margin: 10px auto;
+  background-color: #eee;
+  background-repeat: repeat-y;
+}
+.assign-2-shape-3 {
+  width: 400px;
+  background-image: url("css-assignment-5-8.png");
+  height: 400px;
+  margin: 10px auto;
+  background-color: #eee;
+  background-repeat: repeat-x;
+}
+.assign-2-shape-4 {
+  width: 400px;
+  background-image: url("css-assignment-5-8.png");
+  height: 400px;
+  margin: 10px auto;
+  background-color: #eee;
+  background-repeat: repeat;
+}
+.assign-3-shape-1 {
+  width: 400px;
+  height: 400px;
+  background-image: url("css-assignment-5-8.png");
+  background-repeat: no-repeat;
+  margin: 10px auto;
+  background-color: #eee;
+}
+.assign-3-shape-2 {
+  width: 400px;
+  height: 400px;
+  background-image: url("css-assignment-5-8.png");
+  background-repeat: repeat-y;
+  background-position: right;
+  margin: 10px auto;
+  background-color: #eee;
+}
+.assign-3-shape-3 {
+  width: 400px;
+  height: 400px;
+  background-image: url("css-assignment-5-8.png");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  margin: 10px auto;
+  background-color: #eee;
+}
+.assign-3-shape-4 {
+  width: 400px;
+  height: 400px;
+  background-image: url("css-assignment-5-8.png");
+  background-repeat: repeat;
+  margin: 10px auto;
+  background-color: #eee;
+}
+/* ستخدم البنية السابقة لعمل المطلوب
+ال Div طوله وعرضه هو 400px
+قم بوضع الصورة الموجودة في بداية التكليفات خلفية للعنصر
+في Shape 1 قم بجعل الخلفية تملأ 80% من الطول والعرض الخاص بالعنصر
+في Shape 2 قم بعمل الشكل مثل الصورة
+في Shape 3 قم بعمل الشكل مثل الصورة
+في Shape 4 قم بجعل الخلفية تأخذ 50% من طول وعرض العنصر وقم بتغيير مكانها */
+.assign-4-shape-1 {
+  width: 400px;
+  height: 400px;
+  margin: 10px auto;
+  background-color: #eee;
+  background-image: url("css-assignment-5-8.png");
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+}
+.assign-4-shape-2 {
+  width: 400px;
+  height: 400px;
+  margin: 10px auto;
+  background-color: #eee;
+  background-image: url("css-assignment-5-8.png");
+  background-position: right;
+  background-repeat: repeat-y;
+  background-size: 80%;
+}
+.assign-4-shape-3 {
+  width: 400px;
+  height: 400px;
+  margin: 10px auto;
+  background-color: #eee;
+  background-image: url("css-assignment-5-8.png");
+  background-size: 80%;
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+.assign-4-shape-4 {
+  width: 400px;
+  height: 400px;
+  margin: 10px auto;
+  background-color: #eee;
+  background-image: url("css-assignment-5-8.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}

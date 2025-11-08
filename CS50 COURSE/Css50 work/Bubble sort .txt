@@ -1,0 +1,49 @@
+#include <stdio.h>
+ #include <cs50.h>
+
+     int main(void){
+
+
+    int time = get_int("how much numbers do you want to enter ? \n");
+
+    int numbers[time];
+    for (int i = 0 ; i<time ; i++){
+
+     numbers[i]=get_int("num %i :  ",i+1);
+    }
+     // start
+
+       int pri=time;
+       int swap = 0 ;
+
+         do{
+         swap = 0 ;
+         time-=1;
+          for (int i = 0 ; i<time ; i++){
+
+
+
+
+     if (numbers[i]>numbers[i+1]){
+
+          int temp=numbers[i];
+
+        numbers[i]=numbers[i+1];
+        numbers[i+1]=temp;
+        swap++;
+        printf("swap %i",swap);
+         printf("\n");
+     }
+
+
+   }
+     printf("\n");
+         }while(swap != 0);
+
+
+
+     for (int i = 0 ; i<pri; i++){
+        printf("%i ",numbers[i]);
+     }
+        printf("\n");
+     }

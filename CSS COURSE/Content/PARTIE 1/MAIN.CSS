@@ -1,0 +1,483 @@
+/* Selector :
+        property : value ;
+        property : value;
+         
+     Main Methode : id ,class , element <-- identifires
+------------------------------------------- 
+we can style our element using 3 method: 
+    - external style 
+    - internal style 
+    - inline style 
+-------------------------------------------
+Use ../ for walk out -- use file-name/ for enter   
+        */
+h1 {
+  color: rgba(238, 130, 238, 0.61);
+  text-align: center;
+}
+/* 
+Background ==> we can set it using color-name or hex RGB 
+RGB ==> RED GREEN BLUE intensity white full / black all emty
+Hex ==> hexadecimal code 
+A --> alpha channel ==> transparency 0 to 1
+
+Sure you can set an image as a backgound using background-image: url()
+   
+backgroud-repeat : repeat : it's default value
+                   repeat-x : repeat only in x axe 
+                   repeat-y : repeat only in y axe 
+                   no-repeat : don't repeat in any axe
+
+background-attachment:
+-fixed : the content only who scrool and background is fixed in background
+-scrool : default value the content and backgroun, the both scrool 
+     
+background-size: specfies the size of the image
+    - cover : cover the content , some part can be cutted
+     - contain : resize img for make it fully visible
+     - controll using perctage: first set the with then set the height
+                                or using px
+      Background-position: 
+                vertically : top - center - bottom
+                horizontaly : left - center - right 
+      or you can set it using px or percentage %   
+ */
+body {
+  margin: 20px;
+  height: 10000px;
+}
+.back1 {
+  background-image: url("download.jfif");
+  width: 1000px;
+  height: 200px;
+  background-repeat: no-repeat;
+}
+h3 {
+  color: gray;
+  font-weight: bold;
+}
+.back2 {
+  background-image: url("download.jfif");
+  width: 900px;
+  height: 200px;
+  background-repeat: repeat-x;
+}
+.back3 {
+  background-image: url("download.jfif");
+  width: 1000px;
+  height: 700px;
+  background-repeat: repeat-y;
+}
+.back4 {
+  background-image: url("download.jfif");
+  width: 1000px;
+  height: 400px;
+  background-repeat: repeat;
+}
+.att1 {
+  background-image: url("pexels-photo-326333.jpeg");
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 700px;
+  color: white;
+  font-size: 70px;
+  font-family: fangsong;
+}
+h2 {
+  text-align: center;
+  color: #773e17;
+  font-weight: bold;
+}
+.att2 {
+  background-image: url("scrool.webp");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 700px;
+  color: #b2e4fe;
+  font-size: 70px;
+  font-family: fangsong;
+  background-size: cover;
+}
+.back-size {
+  display: flex;
+  justify-content: space-between;
+}
+.s1 {
+  background-image: url("mountain-6596074__340.webp");
+  background-size: contain;
+  width: 300px;
+  border: 2px black solid;
+  background-repeat: no-repeat;
+  width: 300px;
+  color: #d1bb38;
+}
+.s2 {
+  background-image: url("mountain-6596074__340.webp");
+  background-size: cover;
+  width: 300px;
+  border: 2px black solid;
+  background-repeat: no-repeat;
+  width: 300px;
+  color: #d1bb38;
+}
+.s3 {
+  background-image: url("mountain-6596074__340.webp");
+  background-size: 70% 90%;
+  background-repeat: no-repeat;
+  width: 300px;
+  border: 2px black solid;
+  height: 150px;
+  color: #d1bb38;
+}
+.backpo1,
+.backpo2,
+.backpo3,
+.backpo4,
+.backpo5 {
+  background-color: #282720;
+  background-image: url("1828961.png");
+  background-size: 50px;
+  background-repeat: no-repeat;
+  border: 4px solid black;
+  margin: 40px;
+  height: 300px;
+}
+.backpo h2 {
+  color: white;
+}
+.backpo1 {
+  background-position: center;
+}
+.backpo2 {
+  background-position: right bottom;
+}
+.backpo3 {
+  background-position: right top;
+}
+.backpo4 {
+  background-position: left center;
+}
+.backpo5 {
+  background-position: 50% 100%;
+}
+/* 
+   Padding ===> used to create a space around an element's content
+                you can set it following clock wise
+  padding-top / padding-left / padding-right / padding-bottom
+
+  Margin ==> the same rule for that and the value can be negatif and
+        the element can go out of the page 
+ */
+.pad1,
+.pad2 {
+  display: inline-block;
+  border: solid black 2px;
+  width: 400px;
+  font-size: 50px;
+}
+.pad1 {
+  padding: 50px;
+}
+.pad2 {
+  padding: 30px;
+}
+/* border propery allow you to specify width , style , color of element
+   border
+outline : usually we use border , in outline doesn't take element space
+          you can modify every side  */
+.bocard {
+  width: 350px;
+  height: 400px;
+  padding: 20px;
+  margin: 30px auto;
+  color: white;
+  background-color: #0f142d;
+  font-size: 20px;
+  border-radius: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 30px;
+  border: 5px solid;
+  border-color: #9ae0ea pink;
+  outline: 2.5px pink solid;
+}
+.bocard h2 {
+  color: white;
+  font-size: 35px;
+  font-family: cursive;
+}
+.bocard button {
+  background-color: transparent;
+  color: pink;
+  border-radius: 16px;
+  border: 0.1px white solid;
+  padding: 7px 12px;
+  margin: 30px auto;
+  display: block;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 17px;
+}
+/* 
+Block 
+    - TAKE FULL WIDTH IF NO WIDTH
+    - ADD LINE BREAK
+    - RESPECT WIDTH , MARGIN , PADDING  , HEIGHT
+
+Inline-block
+
+     - RESPECT WIDTH , MARGIN , PADDING  , HEIGHT
+      -  allow elements before and after and add line break
+
+Inline
+
+    - DO NOT TAKE FULL WIDTH and do not respect it 
+    - DO NOT ADD LINE BREAK
+    - respect margin , padding(just left and right)
+    - allow elements before and after it
+  
+  display none => hide element and don't conserve its place in workflow
+                   we can use it see more 
+  visibillty : hidden ==> conserve its place in work flow , we use it 
+                 for animation 
+
+  * Regrouping: make us able to regroup some element that have the same
+         styling for do it once the avoid the repetation 
+            selector , selector {property}
+
+  * Nesting : allow us to style an element count on it dad (لتعشيش
+   Overflow : default visible and use hidden for hide it 
+  we have 2 value : auto = if the content is big will give if no it don't
+                    scrool : give scrool
+  you can control different sides using : overflow-x and overflow-y
+   REMARK : IF you hide y automaticly x side will have scrool 
+ */
+.visi,
+.disp {
+  width: 300px;
+  height: 300px;
+  background-color: #0f142d;
+  border: white 2px solid;
+  display: inline-block;
+  margin: 50px;
+  border-radius: 15px;
+}
+.line {
+  height: 400px;
+  width: 3px;
+  background-color: black;
+  display: inline-block;
+}
+.disp {
+  display: none;
+}
+.visi {
+  visibility: hidden;
+}
+.over {
+  width: 400px;
+  height: 500px;
+  border: #0f142d solid 2px;
+  border-radius: 15px;
+  margin: 20px;
+  display: inline-block;
+  padding: 20px 30px;
+  font-family: cursive;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  overflow-x: hidden;
+  margin: 20px;
+}
+.over1 {
+  width: 400px;
+  height: 500px;
+  border: #0f142d solid 2px;
+  border-radius: 15px;
+  display: inline-block;
+  padding: 20px 30px;
+  font-family: cursive;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  overflow-x: auto;
+  margin: 20px 400px;
+}
+/* text alignment => horizontally : left right center
+
+   direction : ltr or rtl it depents on language 
+
+   Vertical-align : the place of the text byside a smal img sure
+    three value : top or middle or bottm 
+    
+  text-decoritaion : underline or overline or none or line-through
+
+  text-transform: 
+      * Capitalize ==> first letters are capital
+      * uppercase ==> all the letters are capital
+      * lowercase ==> all the letters are small 
+
+  text-overflow ==> specifies how overflowed content isn't deplayed shloud
+  be signaled to the user . it be clipped, or dispaly an ellipsis mark(..)
+  or display a custom string  "firfox"
+        - clip or ellipsis or string 'only on firefox'
+the following poroperties are required for test-overflow : 
+             -whithe-space : nowrap
+             - overflow : hidden
+
+- white-space: specifies how white-space inside an element is proccesd
+          * nowrap : the text will never wrap to the line
+          * normale : defaul value
+
+- line-height : the distance between lines 'rows'
+- letter-spacing : the distance between the letter
+- word-spacing : the distance between the words
+- word-break : specifies how words should break when reaching at the end
+               of a line
+             -break-work: default value 
+             -break-all: break the line even if we break words into parts
+             so all the content will be the the element
+    */
+.l {
+  text-align: left;
+}
+.r {
+  text-align: right;
+}
+.c {
+  text-align: center;
+}
+.dir {
+  direction: rtl;
+}
+.dil {
+  direction: ltr;
+}
+.c1 {
+  vertical-align: top;
+}
+.sp1 {
+  color: #eef4f5;
+  margin: -53px;
+  font-size: 50px;
+}
+.sp1 span {
+  color: #1b2731;
+  margin: -9px;
+}
+.va1,
+.va2,
+.va3 {
+  margin: 20px;
+}
+.c2 {
+  vertical-align: bottom;
+}
+.sp2 {
+  font-size: 50px;
+  color: #d0d7dd;
+  margin: -53px;
+}
+.sp2 span {
+  color: #598152;
+  margin: -7px;
+}
+.c3 {
+  vertical-align: middle;
+}
+.sp3 {
+  font-size: 50px;
+  color: #6d98a4;
+  margin: -53px;
+}
+.sp3 span {
+  color: #b74939;
+  margin: -7px;
+}
+.lower {
+  text-transform: lowercase;
+  font-size: 30px;
+  border: #0f142d solid 2px;
+  text-align: center;
+}
+.upper {
+  text-transform: uppercase;
+  font-size: 30px;
+  border: #0f142d solid 2px;
+  text-align: center;
+}
+.capitalize {
+  text-transform: capitalize;
+  font-size: 30px;
+  border: #0f142d solid 2px;
+  text-align: center;
+}
+.over-line {
+  text-decoration: overline;
+  font-size: 30px;
+  padding: 20px;
+  border: #0f142d solid 2px;
+}
+.under-line {
+  text-decoration: underline;
+  font-size: 30px;
+  padding: 20px;
+  border: #0f142d solid 2px;
+}
+.line-through {
+  text-decoration: line-through;
+  font-size: 30px;
+  padding: 20px;
+  border: #0f142d solid 2px;
+}
+.ellipsis {
+  text-overflow: ellipsis;
+  border: solid black 2px;
+  height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.clip {
+  text-overflow: clip;
+  border: solid black 2px;
+  height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.nowrap {
+  white-space: nowrap;
+  border: solid black 2px;
+  height: 30px;
+}
+.normal {
+  white-space: normal;
+  border: solid black 2px;
+}
+.letter-space {
+  letter-spacing: 5px;
+}
+.word-space {
+  word-spacing: 10px;
+}
+.line-height {
+  line-height: 40px;
+}
+.break-all {
+  border: black 5px solid;
+  padding: 20px;
+  word-break: break-all;
+}
+footer {
+  height: 500px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #b74939;
+  margin: 80px 0;
+  font-size: 60px;
+  font-family: cursive;
+}

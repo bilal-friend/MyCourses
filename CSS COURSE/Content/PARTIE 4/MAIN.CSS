@@ -1,0 +1,1802 @@
+.ps {
+  text-align: center;
+  color: burlywood;
+}
+
+/* 
+Transform ==> scalex() or scaley() or use shorthand scale(),this property makes us able to 
+resize an element according to its pramatere mesure
+  
+Note: there is a different between reset the width and the height and 
+       using transform 
+
+      Rotate: rotates an element colckwise or conter-colckwise using negative values , you 
+      can use degree or radians or gradians or turn 
+
+      Translate : moves an element horizontally and/or vertically from its current position
+      using positive and negative values Note If you use percentage so the value is relative
+      to dimensision of the element
+
+      skew : (tahrif) an element along X-axis an Y-axis
+
+      matrix : combines all the 2d transform method into one the matrix 
+      take six parameters in the same order and transfrom also can 
+      combines all the prameteres , Note  : for have the same result
+      but translate in the begning - skew(angle) , and sure you mustn't
+      write the units because its has owns
+      SYNTAX : 
+      matrix ( scaleX() , skewY(), SkewX(), scaleY(),TranslateX(),
+             TranslateY()
+
+      * transform origin : specifies the origin of an element , example: 
+  the origin of the rotation in rotate mention the origin of transformtion
+
+  Syntax {default value} : 50% 50% 0%
+     2D transform: transform origin (X;Y)
+     3D transfrom : transfrom origin (X;Y;Z)
+
+   you can key the value using : CSS Units { px , em , rem}
+    percentage or keywords / left=0% and right=100% and center= 50%
+     for Y axis the same things
+
+     rotatate3D ==> (a,a,a,deg) a rotation with 3 dimensions a<1 ou egal
+     a how time deg and it applied in the same time but if you put them 
+     sepertate put rotateX() first
+
+     Translate3D ==> (a,a,a) px or any unit like 2d but here we have z axe
+
+     perspective ==> the distance between us and the element
+       neccesary for all 3d properties or distance between user and z-axis
+
+     perspective-origin ==> the place where we are saying the element
+
+     Transform-style => flat : don't preserve it 3d  position
+                        perserve-3d : perserve it 3d position
+
+     -----------------------CHILD----------------------------------
+     
+     backface-visibility => defines wether or not the back face of an element should be 
+     visible or not when it rotate and facing the user
+
+
+       */
+
+* .babahom {
+  width: 300px;
+  height: 300px;
+
+  margin: auto;
+  position: relative;
+}
+.babahom div {
+  font-size: 40px;
+  font-family: cursive;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
+  text-align: center;
+  font-weight: bold;
+}
+.wow {
+  transform: scale(0);
+  background-color: rgb(241, 191, 98);
+}
+.hm {
+  background-color: orange;
+}
+.babahom:hover .hm {
+  transform: scale(0);
+}
+.babahom:hover .wow {
+  transform: scale(1);
+}
+.test {
+  width: 300px;
+  height: 300px;
+  background-color: aliceblue;
+  margin: auto;
+  transition: 3s;
+  font-size: 40px;
+  font-family: cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.test:hover {
+  transform: scale(-0.7);
+}
+.zo {
+  display: inline-block;
+  width: 35vw;
+  overflow: hidden;
+  background-color: #eee;
+  padding: 3%;
+}
+.zo img {
+  width: 95%;
+  height: 95%;
+
+  transition: 1s;
+}
+.zo img:hover {
+  transform: scale(1.8);
+}
+.image {
+  width: 95%;
+  height: 95%;
+  overflow: hidden;
+}
+.coco {
+  font-size: 30px;
+  font-family: cursive;
+  font-weight: bold;
+  margin: auto;
+  height: 380px;
+  width: 380px;
+  box-shadow: 10px 10px 60px 10px rgba(0, 0, 0, 0.3);
+  background-color: aliceblue;
+  position: relative;
+}
+.block {
+  color: white;
+  position: absolute;
+  text-align: center;
+  transition: 0.6s ease;
+}
+.B1 {
+  width: 180px;
+  height: 150px;
+  background-color: #337ab7;
+  left: 0;
+  top: 0;
+  line-height: 150px;
+}
+.B2 {
+  width: 180px;
+  height: 230px;
+  top: 150px;
+  left: 0;
+
+  background-color: #2ecc71;
+  line-height: 230px;
+}
+.B3 {
+  width: 200px;
+  height: 150px;
+  top: 230px;
+  left: 180px;
+  background-color: #8e44ad;
+  line-height: 150px;
+}
+.B4 {
+  width: 200px;
+  height: 230px;
+  top: 0px;
+  left: 180px;
+  background-color: #c0392b;
+  line-height: 230px;
+}
+body {
+  height: 50000px;
+}
+.block:hover {
+  transform: scale(1.2);
+  z-index: 100;
+  box-shadow: 10px 10px 60px 10px rgba(0, 0, 0, 0.3);
+}
+.kolchi {
+  display: flex;
+  margin: 10px;
+}
+.a1 {
+  background-image: url(photo-1501643454230-e590702f0951.avif);
+}
+.a2 {
+  background-image: url(photo-1597892653980-3cec697283fe.avif);
+}
+.a3 {
+  background-image: url(photo-1489424731084-a5d8b219a5bb.avif);
+}
+.a4 {
+  background-image: url(photo-1533973427779-4b8c2eb4c3cd.avif);
+}
+.a1:hover {
+  transform: scale(1.2) !important;
+}
+.card {
+  position: relative;
+  height: 320px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-size: cover;
+  transition: 1s;
+  color: white;
+  margin-right: 5px;
+  padding: 15px;
+  font-family: cursive;
+}
+.card::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(180deg, #f00, #000);
+  opacity: 0.7;
+  z-index: -1;
+  mix-blend-mode: multiply;
+}
+.card:hover .content {
+  transform: translateY(70px);
+}
+.card:hover {
+  transform: scale(1.3) rotate(-2deg);
+  z-index: 100;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+}
+.content {
+  transform: translateY(350px);
+  transition: 1s;
+}
+.mine {
+  width: 400px;
+  line-height: 25px;
+  font-size: 20px;
+  border: 6px solid burlywood;
+  padding: 40px;
+  margin: 70px auto;
+  position: relative;
+}
+.mine h1 {
+  text-align: center;
+  font-family: cursive;
+  color: brown;
+}
+.mine img {
+  width: 80px;
+  border: 2px solid bisque;
+  transform: rotate(50deg);
+  position: absolute;
+  top: -45px;
+  left: 43%;
+  transition: 1s;
+}
+.mine:hover img {
+  background-color: burlywood;
+  border: none;
+  transform: rotate(0);
+}
+.re,
+.re img {
+  border-color: rgb(122, 180, 34);
+}
+.re h1 {
+  color: rgb(122, 180, 34);
+}
+.re:hover img {
+  background-color: rgb(122, 180, 34);
+}
+.me {
+  width: 400px;
+  padding: 30px;
+  margin: 20px 300px;
+  background-color: #f9d923;
+  color: black;
+  position: relative;
+  font-weight: bold;
+  border: #eb5353 3px solid;
+  border-radius: 6px;
+}
+.me h1 {
+  text-align: center;
+  padding: 10px;
+  font-style: oblique;
+}
+.me p {
+  word-spacing: 2px;
+  line-height: 23px;
+}
+.hide {
+  position: absolute;
+  top: 20px;
+  left: -12px;
+  text-transform: capitalize;
+  z-index: -1;
+  width: 180px;
+  transition: 1s;
+  background-color: #36ae7c;
+  padding: 30px;
+  color: white;
+  font-family: cursive;
+}
+
+.hide::before {
+  content: "";
+  background-color: #eb5353;
+  height: 100%;
+  width: 10px;
+  top: 0;
+  left: 0;
+
+  position: absolute;
+}
+.me:hover .hide {
+  transform: translate(-220px, 0px);
+}
+.skew,
+.skew img {
+  width: 400px;
+  margin: 60px auto;
+  background-color: #3c1e1d;
+  color: white;
+  box-sizing: border-box;
+  transition: 2s;
+}
+.skew img {
+  margin-top: 0;
+}
+.skew {
+  transform: skew(10deg);
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.skew:hover {
+  transform: skew(0deg);
+  box-shadow: rgb(92, 28, 28) 1px 1px 60px;
+}
+.skew p,
+.skew h2 {
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  transform: translatey(-70px);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.total {
+  background-color: #1f1f1f;
+  margin: -8px;
+  color: white;
+  padding: 40px 0 40px 0;
+}
+.image,
+.image9 {
+  height: 350px;
+  width: 1000px;
+  position: relative;
+  z-index: 1;
+}
+.skewed:hover,
+.skewed1:hover {
+  box-shadow: rgb(143, 143, 143) 1px 4px 40px;
+  transform: scale(1.1);
+}
+.skewed,
+.skewed1 {
+  width: 700px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  height: 350px;
+  background-color: #111;
+  position: relative;
+  overflow: hidden;
+  transition: 1s;
+}
+
+.skewed::before {
+  content: "";
+  width: 200px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  right: 220px;
+  background-color: #111;
+  transform: skew(10deg);
+  z-index: 2;
+}
+.text,
+.text1 {
+  padding: 20px;
+  position: relative;
+  z-index: 3;
+}
+
+.text h1 {
+  font-family: sans-serif;
+}
+.text a,
+.text1 a {
+  text-decoration: none;
+  color: white;
+  font-family: cursive;
+  padding: 6px;
+  color: #a09a72;
+  font-weight: bold;
+}
+
+.text small {
+  color: gray;
+}
+.skewed:hover h1 {
+  color: #a09a72b4;
+}
+.sr:hover h1 {
+  color: #5e9a9c;
+}
+.tr a {
+  color: #5e9a9c;
+}
+.sr::before {
+  transform: skew(342deg) translateX(-20px);
+}
+.ir {
+  width: 90em;
+}
+/* ------------ */
+.ncard {
+  width: 500px;
+  height: 300px;
+  margin: 70px;
+  margin-left: 200px;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+}
+.ncard .picture {
+  background-color: #333;
+  box-sizing: border-box;
+  width: 500px;
+  height: 300px;
+  right: 0;
+  top: 0;
+  transition: transform 2s 0.5s;
+  position: absolute;
+  z-index: 2;
+}
+.ncard:before {
+  content: attr(text);
+  color: rgb(230, 230, 230);
+  font-size: 150px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  opacity: 0.1;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  z-index: 8000;
+}
+.ncard:hover::before {
+  display: none;
+}
+.picture img {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.ncard:hover .text-in {
+  display: block;
+}
+.ncard:hover .picture {
+  background-color: rgb(241, 0, 121);
+  transform: translate(-290px, 2px) scale(0.5);
+}
+.text-in {
+  box-sizing: border-box;
+  z-index: 1;
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  top: 0;
+  background-color: white;
+  padding: 30px;
+  padding-left: 100px;
+  border: 1px solid black;
+  line-height: 30px;
+}
+.text-in h1 {
+  font-weight: bold;
+  font-family: cursive;
+}
+.text-in a {
+  text-decoration: none;
+  color: white;
+  background-color: #111;
+  padding: 10px;
+  margin-top: 15px;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+}
+.tout {
+  background-color: #222;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  margin: -8px;
+}
+.baraka {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  margin: -8px;
+  height: fit-content;
+  background-color: #787d77;
+}
+.son {
+  width: 250px;
+  background-color: white;
+  height: 200px;
+  margin: 20px;
+  margin-top: 100px;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 1s;
+  position: relative;
+}
+.tsiwra img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+.tsiwra {
+  position: relative;
+  z-index: 2;
+  transform: translate(3%, -40%);
+}
+
+.ktaba {
+  z-index: 1;
+  position: absolute;
+  top: -125px;
+  left: 36px;
+  width: 200px;
+  margin-top: 40px;
+  transition: 1s;
+}
+.son:hover .ktaba {
+  transform: translatey(205px);
+}
+.son:hover {
+  height: 300px;
+  transform: scaleY(1.3);
+  box-shadow: #eee 1px 1px 60px;
+}
+.ikh {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  position: relative;
+  transform-style: preserve-3d;
+
+  transition: 1s;
+}
+.co {
+  perspective: 200px;
+  margin-top: 100px;
+}
+.face {
+  position: absolute;
+  font-size: 50px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: cursive;
+  backface-visibility: hidden;
+  perspective: 400px;
+}
+.ikh:hover {
+  transform: rotatey(180deg);
+}
+.back {
+  background-color: green;
+  transform: rotateY(180deg);
+}
+.front {
+  background-color: red;
+}
+.tous {
+  perspective: 300px;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+.toute {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  transform-style: preserve-3d;
+}
+.toute:hover {
+  transform: rotateY(180deg);
+}
+.toute div {
+  font-size: 40px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+}
+.lwl {
+  background-color: yellow;
+}
+.tani {
+  background-color: orange;
+  transform: rotateY(180deg);
+}
+.challenge {
+  background-color: #111;
+  padding: 100px 50px;
+  margin: -8px;
+}
+.flip {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  margin: auto;
+  transform-style: preserve-3d;
+}
+
+.flip div {
+  font-size: 50px;
+
+  font-weight: bold;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: ease-in-out 2s;
+  font-family: Arial, Helvetica, sans-serif;
+
+  backface-visibility: hidden;
+}
+.ono {
+  background-color: #fefe01;
+  transform: perspective(500px);
+}
+.doso {
+  background-color: #3cc0ff;
+  transform: perspective(500px) rotateY(180deg);
+  color: white;
+}
+.flip div h2 {
+  transform: perspective(500px) translateZ(50px);
+  text-transform: uppercase;
+}
+.flip:hover .ono {
+  transform: perspective(500px) rotateY(180deg);
+}
+.flip:hover .doso {
+  transform: perspective(500px) rotateY(360deg);
+}
+.aa {
+  margin: auto;
+  width: 200px;
+  height: 300px;
+  font-size: 40px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 2s;
+
+  transform: perspective(200px);
+  color: #a7a7a7;
+}
+.wi {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+.wi p {
+  transform: perspective(500px) translateZ(70px);
+}
+.aa:hover {
+  transform: perspective(200px) rotatey(180deg);
+}
+.ff {
+  background-color: rgb(69, 173, 69);
+}
+.bb {
+  background-color: red;
+  transform: rotateY(180deg);
+}
+.f-front,
+.f-front img,
+.f-back,
+.f-card,
+.f-back::before {
+  width: 250px;
+  height: 320px;
+  margin: auto;
+  border-radius: 10px;
+}
+.f-back {
+  position: relative;
+  top: -100%;
+}
+.f-back::before {
+  content: "";
+  background-image: linear-gradient(
+    rgb(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0)
+  );
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  transform: rotateY(0deg);
+
+  backface-visibility: hidden;
+}
+
+.f-back {
+  transform: rotateY(180deg);
+  background-image: url("photo-1650476899463-1ca502081a61.avif");
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
+  transform-style: preserve-3d;
+  font-weight: bold;
+}
+.f-back p {
+  color: #f3eecf;
+  text-align: center;
+  font-family: cursive;
+}
+.logo img {
+  background-color: white;
+  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.f-card {
+  transition: 1s ease-in-out;
+  transform-style: preserve-3d;
+}
+.f-card:hover {
+  transform: rotateY(180deg) scale(1.1);
+  box-shadow: 1px 1px 60px rgba(0, 0, 0, 0.81);
+}
+.f-back div {
+  transform: translateZ(70px) perspective(400px);
+}
+.vv {
+  backface-visibility: hidden;
+}
+.f-ground {
+  background-image: linear-gradient(45deg, #f3eecf, #f9faf1, white);
+  margin: -8px;
+  padding: 100px;
+  perspective: 400px;
+}
+.imii div {
+  width: 250px;
+  height: 360px;
+  backface-visibility: hidden;
+}
+.imii1 img,
+.imii2 img {
+  width: 285px;
+  height: 360px;
+}
+.imii div {
+  position: absolute;
+}
+.imii {
+  width: 258px;
+  height: 360px;
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.main-card {
+  width: 550px;
+  height: 360px;
+  margin: 50px auto;
+
+  position: relative;
+  box-sizing: border-box;
+  perspective: 800px;
+  transition: 1s 0.5s;
+}
+.main-card:hover {
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.589);
+  transform: scale(1.2);
+}
+.im-in {
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  top: 50px;
+  right: -14px;
+  box-sizing: border-box;
+  z-index: 1;
+  font-family: cursive;
+}
+.im-in p {
+  color: orange;
+  font-weight: bold;
+}
+.imii2 {
+  transform: rotateY(180deg);
+}
+.imii {
+  transform: rotateY(180deg);
+  transform-origin: right center;
+  z-index: 2;
+}
+.main-card:hover .imii {
+  transform: rotateY(0);
+}
+.ccrr {
+  margin: 20px -8px;
+  padding: 50px;
+  background-image: linear-gradient(45deg, #f7efcc, #fffee9, white);
+}
+.fadae {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fbe9e7;
+  padding: 100px;
+  margin: -8px;
+}
+.carrd {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  transition: 1s;
+  box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.4);
+}
+.dettails {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.dettails .contentt {
+  line-height: 35px;
+  font-family: cursive;
+}
+.dettails .contentt h2 {
+  text-align: center;
+}
+.dettails .contentt h2 span {
+  color: #e21212;
+  font-size: 16px;
+  text-align: center;
+}
+.dettails .soci-icon img {
+  background-color: #333;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 6px;
+}
+.dettails .soci-icon img:hover {
+  background-color: #e21212;
+}
+.imgbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transform-origin: left;
+  transition: 1s;
+  transform: perspective(500px);
+}
+.imgbox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.imgbox img:nth-child(2) {
+  transform: rotateY(180deg);
+  box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.4);
+}
+.carrd:hover .imgbox {
+  transform: rotateY(180deg);
+}
+.carrd:hover {
+  transform: translateX(50%);
+}
+.sub-card {
+  width: 340px;
+  height: 400px;
+  transition: 1s;
+  outline: rgb(177, 202, 209) 3px solid;
+  border-radius: 6px;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.sub-card .dos {
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.dos:before {
+  content: url("two-big-gears (2).png");
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.sub-card:hover {
+  transform: rotateY(180deg);
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+}
+.sub-card .visage {
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 6px;
+  left: 0;
+  top: 0;
+}
+.sub-card .visage img {
+  width: 340px;
+  height: 400px;
+  border-radius: 6px;
+}
+.color {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -8px;
+  background-color: #ceeffe52;
+  perspective: 600px;
+}
+
+.n-inst h1 {
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.n-inst span {
+  font-size: 16px;
+  font-family: cursive;
+  color: gray;
+}
+.info-inst {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 12px;
+}
+.info-inst span {
+  font-size: 14px;
+  color: gray;
+}
+.portrait img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.portrait {
+  margin: auto;
+}
+/* Animation : an animation lets an element gradually change from one style to another .
+  you can change as many CSS properties you want,as many time as you wan 
+
+  @ Keyframes : syntax ==> @keyframes animation-name {
+                                                from{property: value;}
+                                                to {property : value;}
+   you can use keywords From (=0%) and to (=100%) and you can use percentage from more 
+   accuracy . For do an animation, First => we have to give the element an animation name
+   for mention it in after @keyframes 
+
+   ** Animation-name : enter a name for use to control animation in keyfram
+
+   ** Animation-duration : specifes defines how longs an animtion take to complete ,
+   if it's not specifes . so it will use default value that is 0s,no animation will happen
+
+   ** Animationt-delay ==> specifes a delay for the start of an animation , it can be 
+     positif or negatif that mean that animation will start as if it had already been 
+     playing 
+
+  **  animation-iteration-count : property specifies the number of times that an animation
+   should run , use "infinite"  for make the animation continue for ever 
+
+  ** Animation-direction : specifies whether an animation should be played forwards,backward
+  or in alternate cycle 
+    - normal : the animation is played as normal (forwards). This is default
+    - reverse : the animation is played in reverse direction (backwards)
+    - alternate : the animation is played forwards first , then backwards
+    - alternate-reverse : The animation is played backwards first, then forwards
+
+  ** Animation-timing-function : specifies the speed curve of the animatiomn
+    - ease : slow start,then fast,then end slowly (this is default)
+    - linear : specifies an animation with the same speed from start to end
+    - ease-in : slow start / - ease-out : slow end / - ease-in-out : slow end and start
+    - cubic-bezier(n,n,n,n) : lets you define you own values 
+
+  ** Animaion-play-state : specifies whether the animation is running or paussed 
+    running is default / paussed
+
+  ** Animation-fill-mode : specifies a style for target element when the animation is not
+       playing (before it starts , or after it ends , or both
+     - none : default value, Animation will not apply any styles to the element before or 
+              after it's executing 
+     - forwards : the element will preserve the syling of the last keyframes 
+     - backwards : the element will take the styling (before start animation ) from 
+                   the first kyframes
+     - both : Backword and formward 
+
+  ** Animation : is a shorthand for all animation properties
+  
+  */
+.animation-cub {
+  width: 100px;
+  height: 100px;
+  animation-name: square;
+  animation-duration: 3s;
+  position: relative;
+  animation-iteration-count: 0;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: none;
+  background-color: green;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  margin: 50px;
+}
+.animation-cub:hover {
+  animation-play-state: paused;
+}
+@keyframes square {
+  from {
+    background-color: rgb(221, 221, 179);
+    left: 50px;
+  }
+  to {
+    background-color: yellow;
+    left: 400px;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+  }
+}
+.animation {
+  width: 300px;
+  height: 60px;
+  border: 3px solid black;
+  margin: 70px auto;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.animation ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: yellow;
+  height: 60px;
+  width: 400px;
+}
+.animation ul li {
+  list-style: none;
+  position: relative;
+  margin: 0 10px;
+  width: 20px;
+  height: 30px;
+  background-color: black;
+  transform: skewX(35deg) translateX(-50px);
+  animation: trik;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+
+  animation-timing-function: linear;
+}
+.animation ul li::before {
+  content: "";
+  list-style: none;
+  top: 30px;
+  position: absolute;
+  margin: 0 10px;
+  width: 20px;
+  height: 30px;
+  background-color: black;
+  transform: skewX(310deg) translateX(-28px);
+}
+@keyframes trik {
+  from {
+    transform: skewX(35deg) translatex(-111px);
+  }
+  to {
+    transform: skewX(35deg) translatex(-0);
+  }
+}
+.ooo {
+  text-align: center;
+  color: #4f5724;
+  font-size: 35px;
+  font-weight: bold;
+  font-family: cursive;
+  position: relative;
+  top: -40px;
+}
+.tapis {
+  background-color: #222;
+  margin: -8px;
+  padding: 70px;
+}
+.mouse {
+  width: 130px;
+  height: 210px;
+  border: 5px solid white;
+  margin: 20px auto;
+  border-radius: 45px;
+  display: flex;
+  justify-content: center;
+}
+.click {
+  margin-top: 20px;
+  position: relative;
+  width: 10px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: white;
+}
+.click::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  animation: click 2s infinite linear;
+}
+@keyframes click {
+  0% {
+    top: 20px;
+    opacity: 1;
+  }
+  20% {
+    top: 40px;
+    opacity: 1;
+  }
+  40% {
+    top: 60px;
+    opacity: 0.9;
+  }
+  60% {
+    top: 80px;
+  }
+  80% {
+    top: 100px;
+  }
+  100% {
+    top: 120px;
+    opacity: 0;
+  }
+}
+.chari {
+  margin: -8px;
+  background-color: #006ea6;
+  display: flex;
+  justify-content: center;
+}
+.chrita {
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+  position: relative;
+}
+.chrita span {
+  width: 10px;
+  height: 25px;
+  border-radius: 2px;
+  background-color: white;
+  margin-top: 15px;
+  opacity: 0.2;
+}
+.chrita img {
+  position: absolute;
+  left: 73px;
+  top: 50px;
+  animation: sahm 2s linear infinite;
+}
+@keyframes sahm {
+  0% {
+    top: 50px;
+  }
+  20% {
+    top: 90px;
+  }
+  40% {
+    top: 130px;
+  }
+  60% {
+    top: 180px;
+  }
+  80% {
+    top: 190px;
+    opacity: 0.6;
+  }
+  100% {
+    top: 230px;
+    opacity: 0;
+  }
+}
+.water {
+  text-transform: uppercase;
+  padding: 50px 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.lma {
+  background: #262626;
+  margin: -8px;
+  width: 105%;
+  height: 500px;
+  position: relative;
+}
+.lma::before {
+  content: "LOADING . . .";
+  position: absolute;
+  right: 100px;
+  bottom: 20px;
+  color: white;
+  font-weight: bold;
+  font-family: cursive;
+}
+.water h1 {
+  color: rgba(255, 255, 255, 0.1);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  margin: 0;
+  margin: 0;
+  background-image: url("1000_F_441716250_ahJleqJ5MbFkn0D51Ftj0afmAgCrCqPr.jpg");
+  background-repeat: repeat-x;
+  background-size: cover;
+  -webkit-background-clip: text;
+  animation: 10s linear lma infinite 3s;
+}
+@keyframes lma {
+  0% {
+    background-position: left 0px top 100px;
+  }
+  40% {
+    background-position: left 300px top -20px;
+  }
+  80% {
+    background-position: left 500px top -25px;
+  }
+
+  100% {
+    background-position: left 650px top -35px;
+  }
+}
+.hayt {
+  background-color: #262626;
+  margin: -8px;
+  padding: 150px 0;
+  display: flex;
+  justify-content: center;
+}
+.rock {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 15px solid white;
+  background-color: #3cc0ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: lawn 20s alternate infinite;
+  position: relative;
+  box-shadow: inset 2px 2px 60px rgba(0, 0, 0, 0.534);
+  overflow: hidden;
+}
+.rock::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  border-radius: 0 250px 250px 0;
+  background-color: rgba(0, 0, 0, 0.336);
+  position: absolute;
+  right: 0;
+}
+.rock img {
+  width: 200px;
+  height: 200px;
+  animation: linear 0.2s infinite sarokh alternate;
+}
+
+@keyframes sarokh {
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(40px);
+  }
+}
+@keyframes lawn {
+  0% {
+    background-color: #3cc0ff;
+  }
+  90% {
+    background-color: rgb(180, 121, 207);
+  }
+}
+.rock i {
+  color: white;
+  font-size: 40px;
+  position: absolute;
+  animation: 2s linear -1s cloud infinite;
+}
+.rock i:nth-of-type(1) {
+  top: 70px;
+  left: 50px;
+}
+.rock i:nth-of-type(2) {
+  top: 140px;
+  right: 50px;
+  font-size: 30px;
+}
+.rock i:nth-of-type(3) {
+  bottom: 100px;
+  left: 130px;
+  font-size: 60px;
+}
+.rock i:nth-of-type(4) {
+  top: 300px;
+  left: 280px;
+  font-size: 50px;
+}
+.rock i:nth-of-type(5) {
+  bottom: 250px;
+  left: 350px;
+  font-size: 70px;
+}
+.rock i:nth-of-type(6) {
+  top: 70px;
+  left: 200px;
+  font-size: 25px;
+}
+.rock i:nth-of-type(7) {
+  top: -50px;
+  left: 120px;
+  font-size: 55px;
+}
+.rock i:nth-of-type(8) {
+  top: -140px;
+  right: 90px;
+  font-size: 30px;
+}
+.rock i:nth-of-type(9) {
+  bottom: -100px;
+  left: 100px;
+}
+.rock i:nth-of-type(10) {
+  top: 0px;
+  left: 50px;
+  font-size: 80px;
+}
+
+@keyframes cloud {
+  from {
+    transform: translateY(-300px);
+  }
+  to {
+    transform: translateY(400px);
+  }
+}
+.christmas {
+  margin: -8px;
+  width: 100%;
+  height: 800px;
+  position: relative;
+  overflow: hidden;
+}
+.happyimg {
+  background-color: greenyellow;
+  width: 100%;
+  height: 50%;
+  padding: 30px;
+  animation: back 10s linear infinite alternate;
+}
+.happyimg img {
+  position: absolute;
+  bottom: 340px;
+}
+.happyimg img:nth-child(1) {
+  z-index: 4;
+  animation: 10s linear infinite snowi;
+}
+@keyframes snowi {
+  from {
+    transform: translatey(-100px);
+  }
+  to {
+    transform: translatey(100px);
+  }
+}
+.happyimg img:nth-child(2) {
+  z-index: 3;
+  animation: 3s linear infinite tree1;
+}
+@keyframes tree1 {
+  from {
+    transform: translatex(-100px);
+  }
+  to {
+    transform: translateX(20px);
+  }
+}
+.happyimg img:nth-child(3) {
+  z-index: 2;
+  animation: 5s linear infinite tree2;
+}
+@keyframes tree2 {
+  from {
+    transform: translatex(-100px);
+  }
+  to {
+    transform: translateX(100px);
+  }
+}
+.happyimg img:nth-child(4) {
+  z-index: 1;
+  animation: 10s linear infinite tree3;
+}
+@keyframes tree3 {
+  from {
+    transform: translatex(-100px);
+  }
+  to {
+    transform: translateX(100px);
+  }
+}
+.christmas h1 {
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  color: greenyellow;
+  font-family: cursive;
+  line-height: 220px;
+  font-size: 50px;
+  animation: linear font 10s infinite alternate;
+}
+@keyframes font {
+  0% {
+    color: greenyellow;
+  }
+  20% {
+    color: rgb(214, 211, 6);
+  }
+  40% {
+    color: orangered;
+  }
+  60% {
+    color: red;
+  }
+  80% {
+    color: #006ea6;
+  }
+  100% {
+    color: #36ae7c;
+  }
+}
+@keyframes back {
+  0% {
+    background-color: greenyellow;
+  }
+  20% {
+    background-color: rgb(214, 211, 6);
+  }
+  40% {
+    background-color: orangered;
+  }
+  60% {
+    background-color: red;
+  }
+  80% {
+    background-color: #006ea6;
+  }
+  100% {
+    background-color: #36ae7c;
+  }
+}
+.gground {
+  margin: -8px;
+  padding: 0px;
+  width: 100%;
+  height: 500px;
+}
+.sndouk {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #337ab7;
+  overflow: hidden;
+  animation: bg-color 10s infinite linear;
+}
+.tree {
+  position: absolute;
+  bottom: -131px;
+  width: 100%;
+  height: 100%;
+}
+.tree1 {
+  background-image: url("christmas/tree1.png");
+  background-repeat: repeat-x;
+  animation: plante1 linear 15s infinite;
+  z-index: 4;
+}
+@keyframes plante1 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1406px 0;
+  }
+}
+.tree2 {
+  background-image: url("christmas/tree2.png");
+  background-repeat: repeat-x;
+  animation: plante2 linear 25s infinite;
+  z-index: 3;
+}
+@keyframes plante2 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1406px 0;
+  }
+}
+.tree3 {
+  background-image: url("christmas/tree3.png");
+  background-repeat: repeat-x;
+  z-index: 2;
+  animation: plante3 linear 45s infinite;
+}
+@keyframes plante3 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1406px 0;
+  }
+}
+.snow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(christmas/snow.png);
+  animation: tlj 15s linear infinite;
+  z-index: 10;
+  background-repeat: repeat-y;
+}
+@keyframes tlj {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 768px;
+  }
+}
+.gground h1 {
+  font-size: 70px;
+  text-align: center;
+  font-family: "Kaushan Script", cursive;
+  animation: color-animate 10s infinite linear;
+}
+@keyframes color-animate {
+  0% {
+    color: #c30000;
+  }
+  25% {
+    color: #1c547d;
+  }
+  50% {
+    color: #00a504;
+  }
+  75% {
+    color: #e7b900;
+  }
+  100% {
+    color: #c30000;
+  }
+}
+@keyframes bg-color {
+  0% {
+    background-color: #c30000;
+  }
+  25% {
+    background-color: #1c547d;
+  }
+  50% {
+    background-color: #00a504;
+  }
+  75% {
+    background-color: #e7b900;
+  }
+  100% {
+    background-color: #c30000;
+  }
+}
+.universe {
+  width: 99vw;
+  height: 800px;
+  position: relative;
+  margin: -8px;
+  color: white;
+  font-family: cursive;
+  font-size: 50px;
+  text-align: center;
+  overflow: hidden;
+}
+.ard {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #091224;
+}
+.mars {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #1a0607;
+}
+.kamars,
+.kaard {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  margin: auto;
+}
+.kamars {
+  background-image: url("mars.jpg");
+  border: solid 7px #dc6946;
+}
+.kaard {
+  background-image: url("earth.jpg");
+  border: 7px solid #38748f;
+  animation: bhar 11s linear infinite;
+}
+@keyframes bhar {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -850px -340px;
+  }
+}
+.kamars::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  transform: scale(1.05);
+  background-color: #dc6946;
+  z-index: 5;
+  filter: blur(140px);
+}
+.dwarar::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 33px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  filter: blur(4px);
+}
+.dwarar {
+  position: absolute;
+  left: -7%;
+  top: -7%;
+  border-radius: 50%;
+  width: 110%;
+  height: 110%;
+  border: 5px solid;
+  border-color: transparent rgb(18, 131, 224) rgb(18, 131, 224)
+    rgb(18, 131, 224);
+  animation: dwar 5s linear infinite;
+}
+@keyframes dwar {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.dwarma {
+  position: absolute;
+  left: -7%;
+  top: -7%;
+  border-radius: 50%;
+  width: 110%;
+  height: 110%;
+  border: 5px solid;
+  border-color: transparent #dc6946 #dc6946 #dc6946;
+  animation: dwarma 5s linear infinite;
+}
+@keyframes dwarma {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.kaard::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  transform: scale(1.05);
+  background-color: #12a7f7;
+  z-index: 1;
+  filter: blur(150px);
+}
+/* CSS Global Values   */

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Learn JavaScript</title>
+    <script>
+      // doesn't , Because Script code is before H1 element and coldn't read it .
+      document.getElementById("el").style.color = "red";
+    </script>
+    <script>
+      /* work , because this code will work after loading all the page so here 
+      the computer will see or read the element that we give styling usign this code  */
+      window.onload = function () {
+        document.getElementById("el").style.color = "red";
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="el">Page Title</h1>
+    <script>
+      /* work , before secript at the bottom of the page , so the code well read h1 
+      and all content page */
+      document.getElementById("el").style.color = "red";
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- link to assignments : https://elzero.org/javascript-bootcamp-assignments-lesson-from-001-to-009/ -->

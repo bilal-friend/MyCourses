@@ -1,0 +1,94 @@
+BASSICS INFORMATIONS ===> 
+kernel ==> the between shell and hardware 
+shell : command line interpreter send command to kernel
+terminal = command line interface :: sends user input to the shell
+      -GUI ==> Graphical user interface shell
+      - CLI ==> command line interface shell
+CMD = otiginal shell for Microsoft operating system
+PowerShell= after CMD
+
+---------------------------commands ------------------------------------
+
+- color ==> to change colors the first background the second for text 
+   SYNTAX ==> color xx
+   white:7    black:0
+
+- command --help : for take INFORMATIONS bout the command
+
+- directory : folder
+
+- pwd : see where you are in your system
+
+- cd : change directory : and we use it for moving
+
+- .. :for move a step behind -- \ : backslash for go to root
+
+- tab : finish the command so it help us
+
+- clear : clear screen / cls : for windows
+
+- md=mkdir= make directory (use "" for name directory that contain 2 part)
+and you can create the folder from any place that you want it using 
+the adress or using {..\ foler extra}
+
+- ls : make a list for files and directories that it in same place 
+and ,dir : for windows
+ 
+ - touch : for make file {fine-name.extension}
+ - code : for create a file and open it in vs code or for open a file in vs code
+- start for open a file     ' start name-file'   
+- start .  => for open current address in file explorer                                       
+
+- mv: can rename and move directories if name entered is new so the command
+ will rename the folder and if there is another diretory with this name 
+ so the command will move the dir to the onther dir
+- mv : unix
+- move and rename : windows
+
+- cp = copy // -r for copy folder and their childs
+
+- rm : remove directory -r / -d for remove emty dir
+        rm -i : ask yes or not
+
+- echo : for print messages -/ echo "sms"> file-name {if this file is 
+existe so we will clear it and print in it ,if not we will create 
+a folder and print in it } // echo"sms" >> file-name 
+{if the file is existe so we  will modify the text and 
+there is not so we will create a new one}
+--note we can use > and >> with all command the it needs
+  
+
+- cat : show the file content and copy 
+- * : wild card ==> for select all
+- tree : for see the structure
+
+- grep : for serch (-r for serch in dirs // -l : do a list of the files
+that contain "looking for ")
+
+-exit : for close cmder
+
+- file : to determine the file type 
+
+- /? : for get explanation
+
+ - ctr c : for stop a process
+- osk : on screen keyboord
+
+- tasklist : for get task list (working programs)
+
+-alias : for get an alias {alias=command}
+
+- {commman1 && command2} = for realize two command in the same time
+- whoami : for get username
+
+systeminfo : get information you system
+
+clip-board= save info {when you do copy }
+ clip < test.text
+ 
+| clip : for send info to clip-board
+
+-----------------------BIG INFORMATIONS --------------------------------
+
+1- searching : - ask you question then add {terminal windows}
+               - use SS64.com (it a reference web site)

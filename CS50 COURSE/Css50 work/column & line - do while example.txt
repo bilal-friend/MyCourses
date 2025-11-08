@@ -1,0 +1,21 @@
+ #include <stdio.h>
+ #include <cs50.h>
+ #include <math.h>
+  int main (void){
+    int rock;
+
+    do{
+     rock=get_int("column & lines :");
+    } while(rock < 1);
+
+  for(int i=0;i<rock;i++){
+    for(int y=0;y<rock;y++){
+       printf("#");
+     }
+   printf("\n");
+ }
+
+
+  }
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2 from episode 111 to 114</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 70vw;
+        margin: auto;
+        font-size: 20px;
+        font-family: sans-serif;
+      }
+      form div {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      form div input,
+      form div select {
+        box-sizing: border-box;
+        width: 70%;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h1>Form</h1>
+      <div>
+        <label for="name">Full Name :</label>
+        <input type="text" name="fName" id="name" />
+      </div>
+
+      <div>
+        <label for="countries">You Country :</label>
+        <select name="countries" id="countries">
+          <option value="Morocco">Morocco</option>
+          <option value="Egypt">Egypt</option>
+          <option value="Algeria">Algeria</option>
+          <option value="Palsetine">Palsetine</option>
+          <option value="Spain">Spain</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="phone">Phone Number :</label>
+        <input type="number" name="phone-Number" id="phone" />
+      </div>
+
+      <div>
+        <label for="password">Password :</label>
+        <input type="password" id="password" name="password" />
+      </div>
+    </form>
+    <script src="app2.js"></script>
+  </body>
+</html>

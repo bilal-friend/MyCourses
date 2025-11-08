@@ -1,0 +1,132 @@
+#include <stdio.h>
+ #include <cs50.h>
+ #include <string.h>
+ #include <ctype.h>
+
+
+
+  int main (void){
+
+
+    string before = get_string("Before :");
+
+
+    for (int i=0;i<strlen(before);i++){
+
+      before[i]=toupper(before[i]);
+
+   }
+
+   
+    printf("After : %s \n",before);
+
+  }
+
+
+     // for make the program convert char to lowercase
+      //  so insted of writing toupper write tolower 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                              to uppercase
+ #include <stdio.h>
+ #include <cs50.h>
+ #include <string.h>
+ #include <ctype.h>
+
+
+
+  int main (void){
+
+
+    string before = get_string("Before : ");
+
+    for(int i=0;i<strlen(before);i++){
+
+       if (before[i]>='a' && before[i]<='z'){
+
+           before[i]=before[i] - 32 ;
+       }
+
+    }
+
+      printf("after : %s \n",before);
+
+
+
+  }
+------------------------------------------------------------------------------------------------------------------------------------
+                                                                  To Lowercase
+ #include <stdio.h>
+ #include <cs50.h>
+ #include <string.h>
+ #include <ctype.h>
+
+
+  int main (void){
+
+
+    string before = get_string("Before : ");
+
+    for(int i=0;i<strlen(before);i++){
+
+       if (before[i]>='A' && before[i]<='Z'){
+
+           before[i]=before[i] + 32 ;
+       }
+
+    }
+
+      printf("after : %s \n",before);
+
+  }
+-------------------------------------------------------------------------------------------------------------------------------
+                                                  to lowercase using (is upper)
+ #include <stdio.h>
+ #include <cs50.h>
+ #include <string.h>
+ #include <ctype.h>
+
+
+  int main (void){
+
+
+    string before = get_string("Before : ");
+
+    for(int i=0;i<strlen(before);i++){
+
+       if (isupper(before[i])){
+
+           before[i]=before[i] + 32 ;
+       }
+
+    }
+
+      printf("after : %s \n",before);
+
+  }
+---------------------------------------------------------------------------------------------------------------------------------
+                                                       To uppercase (is lower) 
+ #include <stdio.h>
+ #include <cs50.h>
+ #include <string.h>
+ #include <ctype.h>
+
+
+  int main (void){
+
+
+    string before = get_string("Before : ");
+
+    for(int i=0;i<strlen(before);i++){
+
+       if (islower(before[i])){
+
+           before[i]=before[i] - 32 ;
+       }
+
+    }
+
+      printf("after : %s \n",before);
+
+  }
+

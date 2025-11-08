@@ -1,0 +1,20 @@
+#include <stdio.h>
+ #include <cs50.h>
+
+
+ int main (void){
+
+      FILE* myfile = fopen("phonebook.csv","a");
+
+      char* name = get_string("name : ");
+      char* phone = get_string("number : ");
+
+
+      fprintf(myfile , "Name : %s   ||   Number : %s \n",name,phone);
+
+      fclose(myfile);
+
+      printf("Congratulation you have created a new account \n");
+
+
+ }

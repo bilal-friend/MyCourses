@@ -1,0 +1,11 @@
+{
+  "String": "Bilal",
+  "Number": 17,
+  "Skills": ["HTML", "CSS", "JS"],
+  "object": {
+    "Tangier": "Bni Makada",
+    "Rabat": "Bwitat"
+  },
+  "boolean": true,
+  "null": null
+}

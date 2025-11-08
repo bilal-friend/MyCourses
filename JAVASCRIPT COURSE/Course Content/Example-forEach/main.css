@@ -1,0 +1,52 @@
+body {
+  background-color: #eee;
+}
+ul li div {
+  padding: 30px;
+  padding-right: 13%;
+  line-height: 2;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  transform: translatex(-99%);
+  transition: 0.8s;
+  position: relative;
+}
+ul li div::before {
+  content: "";
+  width: 15px;
+  height: 100%;
+  background-color: rgba(107, 105, 109, 0.267);
+  position: absolute;
+  left: 90%;
+  top: 0;
+}
+ul li div.d1 {
+  background-color: #333;
+}
+ul li div.d2 {
+  background-color: rgb(126, 37, 81);
+}
+ul li div.d3 {
+  background-color: rgb(141, 109, 5);
+}
+ul li p {
+  font-size: 30px;
+  font-family: cursive;
+  color: gray;
+  font-weight: bold;
+  cursor: pointer;
+}
+ul li:hover p {
+  color: rgb(58, 58, 2);
+}
+
+ul li.active div {
+  transform: translatex(0);
+}
+.logo {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 0;
+  font-weight: bold;
+}

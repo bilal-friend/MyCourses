@@ -1,0 +1,15 @@
+ #include <stdio.h>
+ #include <cs50.h>
+ #include <math.h>
+int main (void){
+
+int i=0;
+
+while(i<20){
+     i+=1;
+     printf("meow \n");
+
+}
+printf("                             finished \n");
+
+}

@@ -1,0 +1,58 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>From W2 to W6</title>
+  </head>
+  <body>
+    <script>
+      // W2
+      document.write("<h1> Elzero </h1>");
+      document.querySelector("h1").style.color = "blue";
+      document.querySelector("h1").style.textAlign = "center";
+      document.querySelector("h1").style.fontSize = "80px";
+      document.querySelector("h1").style.fontWeight = "bold";
+      document.querySelector("h1").style.fontFamily = "arial";
+
+      // W3
+
+      console.log(
+        "%cElzero %cWeb %cSchool",
+        "color:red;font-size:40px",
+        "color:green;font-size:40px;font-weight:bold",
+        "color:white;background : blue;font-size:40px"
+      );
+
+      // W4
+
+      console.group("Group 1");
+      console.log("Message One");
+      console.log("Message Two");
+      console.group("Child Group");
+      console.log("Message One");
+      console.log("Message Two");
+
+      console.group("Grand Child Group");
+      console.log("Message One");
+      console.log("Message Two");
+      console.groupEnd("Grand Child Group");
+      console.groupEnd("Child Group");
+      console.groupEnd("group 1");
+
+      console.group("Group 2");
+      console.log("Message One");
+      console.log("Message Two");
+      console.groupEnd("group 2");
+
+      // W5
+
+      console.table(["Elzero", "Ahmed", "sameh", "Gamal", "Aya"]);
+
+      // W6
+
+      /* console.log("Iam In Console");*/
+      //  document.write("Iam In Page");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+#include <stdio.h>
+ #include <cs50.h>
+
+     int main(void){
+
+          int time = get_int ("how much numbers do you want enter ? \n");
+
+          int numbers[time];
+
+          for (int i = 0 ; i<time ; i++){
+
+             numbers[i]=get_int("num %i : ",i+1);
+          }
+
+          for (int i=0; i<time-1;i++){
+
+              for (int y = i+1 ; y<time ; y++){
+
+
+                if (numbers[i]>numbers[y]){
+                    int numi=numbers[i];
+                    numbers[i]=numbers[y];
+                    numbers[y]=numi;
+                }
+              }
+          }
+
+           for (int i = 0 ; i<time ; i++){
+               printf("%i  ",numbers[i]);
+           }
+           printf("\n");
+     }

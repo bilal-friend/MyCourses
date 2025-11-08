@@ -1,0 +1,52 @@
+#include <stdio.h>
+ #include <cs50.h>
+ #include <string.h>
+
+
+    int main (void){
+
+       int numbers []={ 4,6,8,2,7,5,0};
+       //  linear search
+
+       int X = get_int ("which number are you looking for ? ");
+       for (int i=0;i<7;i++){
+
+            if ( numbers[i] == X){
+
+              printf("found in %i steps \n",i+1);
+              return 0;
+
+            }
+       }
+
+       printf("not found \n");
+       return 1;
+
+     }
+_____________________________________________________________________________________________________
+#include <stdio.h>
+ #include <cs50.h>
+ #include <string.h>
+
+
+    int main (void){
+
+       string names []={ "bilal","ahmad","gamal","mazen","mariam","sara","mai"};
+       //  linear search
+
+       string X = get_string ("which name are you looking for ? ");
+       for (int i=0;i<7;i++){
+
+            if (strcmp(names[i],X)==0){
+
+              printf("found in %i steps \n",i+1);
+              return 0;
+
+            }
+       }
+
+       printf("not found \n");
+       return 1;
+
+     }
+

@@ -1,0 +1,86 @@
+ Any Element With Class Title */
+.title {
+}
+
+/* any element with nav id */
+#nav {
+}
+
+/* any div element */
+div {
+}
+
+/* any h2 element 
+h2 {
+}
+             ------------------------
+<!-- external styling -->
+<link rel="stylesheet" href="css/file.css" />
+
+<!-- internal style -->
+<style>
+p {
+  color:red;
+}
+</style>
+
+<!-- inline styling -->
+<p style="color: blue;">This Is Our Paragraph</p>
+             ------------------------------ 
+<!--  -->
+<link rel="stylesheet" href="{ assets/css/master.css }" />
+            -----------------------------------
+<!-- Write Path -->
+<link rel="stylesheet" href="{ ../source/css/main.css }" />
+          ---------------------------------
+/* valid because when can start by underscore */
+._user-name {
+}
+
+/* valid can start by dash*/
+.-user-name {
+}
+
+/* not valid we can't start with a number  */
+.1user-name {
+}
+
+/* not valid we can't start with special caracter*/
+.@user-name {
+}
+
+/* not valid we can't put special caracter then at the middle */
+.user@name {
+}
+
+/* valid we can put number at middle  */
+._user10name {
+}
+
+/* valid we can use only one caracter */
+.u {
+}
+              -------------Code-Cases-------------------
+/* bad */
+.USERNAME { uppercase isn't good 
+}
+
+/* bad */
+.UserName {
+         Pascale case 
+}
+
+/* good*/
+.user-name {
+    Kabab case very code in CSS 
+}
+
+/* bad */
+.userName {
+    kamal case 
+}
+
+/* bad */
+.usernameprofile {
+    lower case without using dash to spare words
+}

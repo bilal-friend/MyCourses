@@ -1,0 +1,38 @@
+div {
+  display: block;
+  width: 150px;
+  height: 150px;
+}
+.square {
+  background: rgb(161, 1, 1);
+  opacity: 1;
+  transition: opacity 2s;
+}
+.hide {
+  opacity: 0;
+}
+br + div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.circle {
+  background: olive;
+  border-radius: 50%;
+}
+.pulse {
+  animation: pulsing 0.8s infinite ease-in-out;
+}
+@keyframes pulsing {
+  80% {
+    transform: scale(0.7);
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

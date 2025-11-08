@@ -1,0 +1,248 @@
+------------------------BASICS INFORMATIONS-----------------------------
+
+GIT : is Distruted version control system
+GitHub is Source for your Project
+note : you can use Git without GitHub
+
+What can I do with them : - it saves every stage of Project devlopment and sure you
+go back to any stage that you want it {version}
+
+           - Git has GUI and CLI
+           - Group work (devs contribute to the same project) ,
+
+(you can revert changes ) (you can see all modifiction of you team)
+
+           - you can collaborate (for you project)
+
+           - make an organized project {every feature has a comment}
+
+---------------------------- TERMS--------------------------------------
+
+Repository : 
+Branch : from repo
+Local Repo :
+Remote Repo :
+Commit :
+clone :
+push :
+pull :
+pull Request :
+
+------------------------Imorotant Notes --------------------------------
+
+- Create Repository for Every Project
+- Create A New Branch for Every feature or enhacement
+- Anyone Can Push and Pull Depend on Permissions
+------------------let's start ----------------------------------------------
+
+git init : for create you Local Repo and knows Git know that it should watch
+the files that is init , and sure Git is aware of any file , so if you are
+create a file , this file is here but it is not included to you Repository
+
+soooo iles in you Repo can be one of 2 states :
+--Tracked : files that Git knows about and added to your Repo
+-- Untracked : files that are on you working directory , but not added to 
+you Reppo and for get Git track them you have to stage them 
+
+-------------------------- stage
+one of the core functions of Git is the concepts of the staging Environment
+and the commit . as you are working , you may be adding, editing and removig 
+files .but whenever you hit a milestone 'principle ' or finish a part of
+the work , you add the file to a staging Environment 
+==we use --all instead of filenames and shorthand is git add -A
+
+-------------------------- commit
+- NOW IF you finshed the work and you are satisfied with the content of 
+the file added so you are ready to move from stage to commit 
+adding commits keep track of our progrees and changes , Git considers each
+commit change point or "save point" , it is a point in the project you can 
+go back to if you find a bug or want to make change , and when we commit 
+we should always include a message for make it easy for others and ouselves 
+for se what has changes and when .... $$git commit -m "message"
+**-Commit without stage for changed files you can use -a option
+
+------------- GIT Branch
+Branches allow tou to work on differnt parts of a project without impacting
+the main branch , and when the work is completed , a branch can be merged 
+with the main branch and you can even switch between them and work 
+on different projects , sooo for create a branch $$ git branch branch-name$$
+for see the branches $$git branch 
+
+the * beside a branch mean that you are in it currently 
+
+$$ git checkout: used to check out a branch .Moving us from the current 
+branch to the one specified at the end of the command , and sure our 
+workspace will move with us sure if the file not commited yet
+
+NOTE : using -b option will create a new branch and move to it ,if it don't exit
+git branch -d branch-name : for delete branch that its content is merged
+git branch -D branch-name : for delete by force although its content isn't merged
+git branch -m new-name : for renmae you current branch
+if you finish you task using another brach you have 2choice 1.merge you branch with main or
+push you branch then pull request that its link apear in line command
+
+------------------- GIT BRANCH MERGE 
+if you want to update a web-site style , you can ruin "tkharb" all the code
+so be smart and crate another branch  $$ git branch -d : for delete branch
+
+------------------ ADD A REMOTE TO YOU  LOCAL 
+# git remote add origin URL : spcifies that you are adding a remote repo , with 
+the specified URL , as an origin to you local git repo
+
+--------------------------------- PULLING TO KEEP UP-TO-DATE WITH changes
+when working as a team on a project , it is important that everyone stays up to date 
+Any time you start working on a project , you should get the most recent changes to your
+local copy . with Git , you can do that with pull
+PULL is a combination of 2 different commands : 
+                 * fetch
+                 *merge
+-------------FETCH =======> # git fetch remote-name
+git fetch get changes from remote to you local repo {not to you workspace}
+---- Git Diff => for showing the differnces between our local and remote 
+                 syntax : git diff remote-name/local-repo-name -color red : new changes 
+                                                         -color green : the old content
+
+----------MERGE -------------> # git fetch remote-name/local-repo-name
+git merge get changes from local repo to working directory
+---------------- PULL # git pull remote-name
+like we said pull combine between fetch and merge , so pull used to pull all changes from
+Remote to working directory {go by local repo sure}
+
+----------------------- GIT PUSH = for push changes to GitHub from local to remote 
+                                  syntax : git push remote-name
+--------------------CREATE NEW BRANCH ON GitHub
+click on main then enter name of new-branch the click on create {for remote branch}
+* local branch : is a branch the only you can see . it exits only on you local machine 
+* Remote branch : is a branch on the remote . and all team can track it 
+note : git branch : -l for see all local branchs
+                    -r for see all remote branchs 
+                  -a option for see all the branchs local and remote
+
+----------------------- PULL Request
+PULL REQUEST : tell team that you have modifictions and you send this request for demand 
+the team to pull you changes to the main branch at the remote and we use it in: 
+For example , you work in a comany , and you task is adding a feature by javascript and 
+you included in team so you will clone the repo and add a new branch then you will work in it 
+then you will push to the fork repo then you will send the pull request and then the admin see
+the you addition and decide if it will be merged or not , it depend , and then you can delete
+the branch or the fork (because you finished you work) , when you are sending pull request 
+pay attention add check "allow edits from maintaners" for make the admin able to edit content
+
+----------------------------------SSH 
+we use HTTPS to connect to our remote repo . HTTPS will usually work just fiine . but 
+you should use SSH if you work with unsecured networks . and sometimes, a project will require
+that you use SSH , and we use it instead of username and password writting every time SSH give
+the machine our indentity and tell the machine who are us for create a SSH key : 
+{# ssh-keygen} then continue and sure there is passphrase you can protect you key by. this command
+will create for you 2keys the first is private key {id_rsa} and second is a public one that 
+you share it with the remote prat {id_rsa.pub} and then you should copy the public key and paste
+it in remote repo (you can copy it - cat ~/.ssh/id_rsa.pub - or go to the file and use cat )
+and for test that are you successfully authenticated'mwtk msdk" use{#git config -T git@github.com}
+if the last line contain you username on github so you are successfully authenticated 
+-c option for comment and you must do any you address emial
+
+----------------------------GIT CONFIGURITION
+git config --list {-l for shorthand} for show all configuration .and the terminal bring 
+the inforamtion for different places and for be sure try{git config -l --show-origin} .
+we have 2 type of config the first is local that contain info for a specific repo and 
+there is global that contain global INFORMATIONS . for open manuel of configuriton
+{# git hlep config} . and for edit  configuration . take an example 
+{# git config --global user.name "new user-name} applied this for all configuration and for revert 
+and delete or unset an information you have 2ways  the first {git config --gobal user.email ""}
+and the second is { git config --global --unset user.name} , and we have another way to edit config
+{# git config --global --edit} this will open an editor and you can modifed the configuration by it
+and for choice the editor that you want it to open it {# git config --global core.editor editor name 
+or the path for arrive at it } note : -e is shorthand for --edit . if you open the editor you 
+can modified many things like color of status " [color "status"] added=blue Untracked= yellow .."
+
+------------------ MULTIPLE SSH ON ONE COMPUTER {BIG PROBLEME}
+SOLUTION :  create 2 ssh in the same folder one of these keys you will add something to 
+indentity file from config that you will create it and sure don't forget to add a comment 
+using # for write the name of the github account {write anything you want it just a comment,
+then add ssh-key to agent 1.start ssh-agent in backround{eval `ssh-agent -s`}and now 
+ you can add shh{ssh-add}, and when you are doing clone for second account you have to
+change somthing {git remote add origin git@host:kml }
+{the comment should be difrrent / priviate key add agent}
+------------------------Aliases
+For create an Aliases {git config --global alias.abbreviation origin-command} , and you can 
+see your aliases and edit it by config
+--------------------------------------- STASH
+git stash is a temporarily stashing or hiding in shelves or boxes, for add files to stash first
+you have to add files to staging Environment then{git stash}, use{git stash list}for see you boxes
+and use git pop for dropp or remove file form box or use apply for get a copy for file and don'T
+get it out ,when you drop or apply a file direcly the first file that will recieve the command
+so for specifie take this { git stash pop stash@{5} } , use{git stash drop} for delete a box and 
+all the content will be deleted, and use{git stash clear} for delete all boxes,use {git stash show}
+for see changes
+--------------------------------------Restore and Clean
+for unstage a file you have 2 methods first is CLI {git resore --stage file-name} and the second 
+GUI sure using vs in source control{ctr-shift-G}, we use clean for delete all files, we use -n for
+show the filles that will be deleted and use -f option for delete filles, and for consereve a file
+it's enough to stage it 
+---------------------------------RESETTING THE HEAD 
+Head : pointer that refer to the last commit
+if you want to delete a recent commit so you must to remove the head from the bad commit to 
+the good commit because all the commit that are after head well be removes using reset, so for 
+restet the head{git reset --hard good_commit-id}
+git log for see all commits and their inforamtions
+
+---------------------------------IGNORING FILES AND DIRECTORIES
+we use git ignor for ignoring some files that you need it in your working-space and it's not 
+included in project so you have to tell system about this,first create .gitignore then open it,
+for ignore files,use file name for ignore or use *file_extension for ignore any file with this 
+extension,use !file_name for except a file,use directory_name for ignore of dir files, and use
+caractre_how_the_file_begin with * for igore the fille that begin with
+
+-------------------------------------TAGGING AND RELEASING
+ 1. lightweigt tag : take comment from commit comment for add it {git tag tag_name}
+ 2. annotated tag : you can write you personel comment {git tag -a tag-name -m "comment}
+ for see all you tags {git tag or git tag -l} for serch a tag {git tag -l "v1.*} here we search 
+ for all tags that begin with v1. /
+For push a tag {git push origin tag-name}, when you push a tag so all project stop here and if
+you add , all modification will be saved in another version, for delete a tag 1.you need to 
+delete it localy {git tag -d tag-name} and for deleted then from remote 
+{git push origin -d tag-name},and releasing is like tag , we use release for add notes for 
+lightweigt tag
+------------------------- Git Commit --amend
+we use it for change the most recent commit message 
+$$ git commit --amend -m "New commit message" and then push using force option
+{git push -f origin main}
+------------------------------Change Commit message
+git rebase -i HEAD~N , where N is the number of commits, if you want to change the 4th
+and 5th latest commits, you would type $$ git rebase -i HEAD~5 that will show you all
+latest 5 commits, and this command will open an editor 3. move to lines that contain
+the old comment and replace pick with reword then save and close editor , this command
+will also open an editor that in it you can change the comment , then as usual push 
+with force option 
+o change the most recent commit message, use the git commit --amend command. 
+To change older or multiple commit messages, use git rebase -i HEAD~N.
+triks : don't amend push commits because that will cause a lot of problems to you
+colleges <may be> amend= fix or modify or improve
+
+
+git--version : for get which version of git is installed
+
+===== for tell Git who are you $$ git config --global user.name"jdo" and 
+$$git config --global user.email "bb@gld"
+note : use global to set email and user-name for every Repo on you computer
+If you want to set e-mail or username for just the current Repo , you can 
+remove --global
+git status : for check the status of the Git and --short optint will show
+you the info in more impact way and useg a flages
+?? - Untracked files
+A - Files added to stage
+M - Modified files
+D - Deleted files
+-------------- Git log ; for see the history of commits for you Repo
+FOR HELP : if you are having touble remembering commands or options for 
+commands, you can use Git help , the are a couple of different ways you can
+use the help command is command line :
+  1. git command -help : see all available options for the specific command
+  2. Git help --all: see all possible command
+Warnig: this will display a very long list of commands , so if you find 
+        yourself stuck'alik' in the list view , SHIFT + G to jump the end 
+        of the list the Q to exit the view 
+CTR+F : for search in a website
+git push -u origin master {for pull and then push}
+-----------------------For delete files form remote
+first delete them from local repo by delete and commit then push changes . it's easy

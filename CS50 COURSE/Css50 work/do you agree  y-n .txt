@@ -1,0 +1,14 @@
+#include <stdio.h>
+ #include <cs50.h>
+ #include <math.h>
+int main (void){
+
+
+    char a = get_char("do you agree ? y/n \n");
+    if (a== 'y' || a=='Y'){
+        printf("you agree  \n");
+    }
+    else if (a=='n'|| a=='N'){
+        printf("you don't agree \n");
+    }
+}

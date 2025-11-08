@@ -1,0 +1,16 @@
+#include <stdio.h>
+ #include <cs50.h>
+ #include <math.h>
+
+     int main (void){
+
+         int n = get_int("n=");
+
+if(n%2==0){
+    printf("x is even \n");
+}
+
+else {
+      printf("x is odd \n");
+
+ }

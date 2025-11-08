@@ -1,0 +1,913 @@
+/* 
+Transition==>  allows you to change property value smoothly
+       - Durition: time used for complete transition
+       - Property : controlled property
+       - Delay : It is the time taken to start transition 
+       - Timing Function : Transition speed ==> linear: the same speed 
+       ease:low fast low 
+                                           
+ */
+body {
+  height: 40000px;
+}
+.ps {
+  text-align: center;
+  color: olive;
+}
+.tran {
+  width: 200px;
+  background-color: aqua;
+  height: 100px;
+  transition-property: width;
+  transition-delay: 0.1s;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  padding: 20px;
+  font-size: 20px;
+}
+.tran:hover::before {
+  content: "100%";
+}
+.tran::before {
+  content: "fixed";
+}
+.tran:hover {
+  width: 100%;
+}
+.circle {
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 10px;
+  /* transition-property: border-radius;
+  transition-duration: 2s;
+  transition-delay: 0.5s; */
+  transition: margin-top 1s 0.5s, border-radius 1s 1s,
+    background-color 0.5s 1.5s;
+}
+.circle:hover {
+  background-color: yellow;
+  border-radius: 50%;
+  margin-top: 100px;
+}
+.hide ul {
+  margin-left: -100px;
+  transition: 1s;
+  list-style: none;
+}
+.ph:hover + ul {
+  margin-left: 10px;
+}
+.ph {
+  font-size: 20px;
+  border: 1px solid greenyellow;
+  color: greenyellow;
+  width: 150px;
+  text-align: center;
+  padding: 20px;
+}
+.ph:hover {
+  color: white;
+  background-color: greenyellow;
+  box-shadow: 1px 2px 7px gray;
+}
+/* 
+Important Declarition: used to add more importance to a property for 
+ applly it allon  */
+.imdec {
+  color: green !important;
+  font-size: 30px;
+}
+
+/* 
+Margin Collpase: Top and bottom margins of elements are sometimes 
+   collapsed into a single margin that is equal to the largest of 
+   the two margins , NOTE: This does not happen on left and right margins 
+   that happen only top and bottom margins! 
+   
+   */
+.maco,
+.macol {
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  background-color: darkgoldenrod;
+}
+.maco {
+  margin-bottom: 101px;
+}
+.macol {
+  margin-top: 100px;
+}
+/* 
+Css Variables : The var() function is to unsert the value of a CSS 
+ variabe :: Syntax ==> --name,value , NOTE: the variable name must
+ begin with two dashes (--).
+     * global variabel: declare it inside the :root selector 
+     * local variable : declare it inside the selector that is going to 
+                        use it in .
+ and for use it : property : var(--name, fall back value if didn't find 
+                  the var )
+Note : we can do calculation on variables 
+      */
+:root {
+  --padding: 20px;
+  --main-color: rgb(108, 163, 62);
+  --font-color: white;
+  --back-color: dodgerblue;
+  --main-size-font: 20px;
+  --back-emty: #eee;
+  --width-emty: 400px;
+  --height-emty: 250px;
+}
+.vr {
+  padding: var(--padding, 10px);
+  background-color: var(--main-color);
+  color: var(--font-color);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--back-color);
+  color: var(--font-color);
+  font-size: var(--main-size-font);
+  padding: var(--padding);
+  cursor: pointer;
+}
+nav {
+  position: sticky;
+  top: 0px;
+  margin-top: -20px;
+}
+.parent section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.cart {
+  background-color: var(--back-emty);
+  width: 250px;
+  height: var(--height-emty);
+  height: 250px;
+  margin: var(--padding);
+  cursor: pointer;
+  border-radius: 5px;
+}
+.parent {
+  height: 500px;
+  overflow-x: hidden;
+  --font-nav: 20px;
+  --footer-bk: #333;
+}
+.logo {
+  background-color: #333;
+  padding: 30px;
+  text-align: center;
+  font-size: calc(10px + var(--main-size-font));
+  color: var(--font-color);
+}
+footer {
+  background-color: var(--footer-bk);
+  height: var(--height-emty);
+  color: var(--font-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(20px + var(--font-nav));
+}
+/* 
+Flexible box : 
+
+- Display: flex ==> to start using a flexbox, you need first to define 
+                    a flex container for become flexible
+                    
+- Flex-dirction : defines in which dirction the container wants to stock
+                   the flex items 
+            * column : horizontally 
+            * column-reverse : horizontally with reverse order
+            * row :  vertically
+            * row-reverse : vertically with reverse order
+            
+- Flex-Wrap: property sepicifies whether the flex items should wrap or not
+             * wrap : flex items will wrap if necessary 
+             * nowrap : flex items won't wrap ( default value )
+             * wrap-reverse : will wrap if necessary in reverse order or reverse dirction
+             
+- flex-flow ==> is a shorthand for setting fles-directon and flex-wrap
+
+- justify-content : property align the items when the items don't use all
+availabe space on the main-axis (horizontally)
+       * flex-end : align the flex items at the end of the container
+       * flex-start: align the flex items at the start of the container
+       * center : align the flex items at the center of the container
+       * space-between :flex items will have a space between them
+       * space-around : flex items will have a space before,between,after
+       * space-evenly : flex items will have equal space around them
+
+- align-items : align the flex items vertically in the parent 
+      * flex-start : in the head or start of the container or line
+      * flex-end : in the foot or end of the container or line
+      * streach : flex items take or space or all line (default value)
+      * center : in the middle of the container or the line 
+
+- align-content : used to align the flex lines if there is multiple lines
+                  * space-between : equal space between lines
+                  * space-evenly : equal space around lines
+                  * space-around : space after and before flex items every line
+                  * flex-start :  all lines at the start of the head of the container
+                  * flex-end : all lines at the end of the container
+                  * center :  all lines at the center of the container
+  
+  --------------------------------------- For Child --------------------------------------
+  - flex-order : specifes the order of the flex items (0 is default value), if there are 
+  many element has the same order , so we use the last one in css
+  - flex-grow: specifies how much a flex item will grow relative to the other flex items
+  - flex-shrink :'inkimach' specifes how much a flex item will shrink if necessary  
+  relative to other element 
+  - flex-basis : specifes the width of the element if horizontally or height 
+  if vertically
+  - flex : shorthand for flex-grow and flex-shrink and flex-basis//flex-grow first shrink-
+  - display: inline-flex ===> all flex property but inline 
+  - align-self : align specific child not like align align items that align all (auto=default)
+  
+
+
+
+  **************************************FROGGY GAME NOTES******************************
+ IN order : use -1 to put an element before all 
+ JUSITFY CONTENT play the role of align item if the direction is comumn and align items also .
+
+       */
+.row,
+.row-reverse,
+.column,
+.column-reverse,
+.wrap,
+.nowrap,
+.wrap-reverse,
+.flow,
+.ju-start,
+.ju-end,
+.ju-space-between,
+.ju-space-around,
+.ju-space-evenly,
+.ju-center,
+.al-it-start,
+.al-it-stretch,
+.al-it-end,
+.al-it-center,
+.al-co-space-around,
+.al-co-space-between,
+.al-co-space-evenly,
+.self,
+.basis,
+.shrink,
+.flex,
+.order,
+.grow {
+  display: flex;
+  flex-direction: row;
+  --first: yellow;
+  --second: orange;
+  --third: red;
+  --fourth: purple;
+  --fifth: dodgerblue;
+  --main-font-size: 100px;
+  font-size: var(--main-font-size);
+  padding: var(--padding);
+  --main-width: 165px;
+  text-align: center;
+}
+.yellow {
+  background-color: var(--first);
+  width: var(--main-width);
+}
+.orange {
+  background-color: var(--second);
+  width: var(--main-width);
+}
+.red {
+  background-color: var(--third);
+  width: var(--main-width);
+}
+.purple {
+  background-color: var(--fourth);
+  width: var(--main-width);
+}
+.dodgerblue {
+  background-color: var(--fifth);
+  width: var(--main-width);
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+.column {
+  flex-direction: column;
+}
+.column-reverse {
+  flex-direction: column-reverse;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.nowrap {
+  flex-wrap: nowrap;
+}
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+.flow {
+  flex-flow: row-reverse wrap-reverse;
+}
+.ju-start {
+  justify-content: flex-start;
+}
+.ju-end {
+  justify-content: flex-end;
+}
+.ju-center {
+  justify-content: center;
+}
+.ju-space-between {
+  justify-content: space-between;
+}
+.ju-space-around {
+  justify-content: space-around;
+}
+.ju-space-evenly {
+  justify-content: space-evenly;
+}
+.wrap div,
+.nowrap div,
+.wrap-reverse div,
+.flow div {
+  width: 270px;
+}
+.al-it-start,
+.al-it-end,
+.al-it-stretch,
+.al-co-space-around,
+.al-co-space-between,
+.al-co-space-evenly,
+.al-it-center,
+.al-co-space-around,
+.al-co-space-between,
+.al-co-space-evenly {
+  height: 550px;
+}
+.al-it-start {
+  align-items: flex-start;
+}
+.al-it-end {
+  align-items: flex-end;
+}
+.al-it-stretch {
+  align-items: stretch;
+}
+.al-it-center {
+  align-items: center;
+}
+.al-co-space-around,
+.al-co-space-between,
+.al-co-space-evenly {
+  flex-wrap: wrap;
+}
+.al-co-space-around div,
+.al-co-space-between div,
+.al-co-space-evenly div {
+  width: 300px;
+}
+.al-co-space-around {
+  align-content: space-around;
+}
+.al-co-space-between {
+  align-content: space-between;
+}
+.al-co-space-evenly {
+  align-content: space-evenly;
+}
+.o5 {
+  order: 1;
+}
+.o4 {
+  order: 4;
+}
+.o1 {
+  order: 4;
+}
+.o2 {
+  order: 4;
+}
+.o3 {
+  order: 3;
+}
+.g1 {
+  flex-grow: 2;
+}
+.s3 {
+  flex-shrink: 2;
+}
+.s2 {
+  flex-shrink: 5;
+}
+.s5 {
+  flex-shrink: 4;
+}
+.b1 {
+  flex-basis: 275px;
+}
+.basis {
+  flex-direction: column;
+}
+.f3 {
+  flex: 250px 2 3;
+}
+.self {
+  height: 500px;
+}
+.h5 {
+  align-self: flex-end;
+}
+.h3 {
+  align-self: center;
+}
+.h1 {
+  align-self: start;
+}
+/* filter: used to do visuel effect like*
+   blur(px): dbab 
+   brightness(%) :0% will make image completely black 100% default value
+   grayscale (%): 0% is the original image and 100% competely gray
+   url(): take location of an xml file that specifies an svg filter
+   opacity(%): is completly transparent and 100% or 1 is original image
+    */
+.filter div,
+.filter1 div,
+.filter2 div {
+  display: inline-block;
+  width: 300px;
+  margin: 20px;
+  filter: grayscale(100%);
+  transition: 0.8s;
+}
+.filter div:hover {
+  filter: grayscale(0);
+}
+.filter1 div {
+  filter: opacity(100%);
+}
+.filter1 div:hover {
+  filter: opacity(50%);
+  cursor: pointer;
+}
+.filter2 div {
+  filter: blur(2px);
+}
+.filter2 div:hover {
+  filter: blur(0px);
+}
+
+/* Gradients: syntax => background-image:
+ linear-gradient(dirction of angle, color stop1 color stop2 ..)
+ NOTE : if you specifies colors stop so no combines colors becouse you 
+ specifes the start and the end of a color   */
+.gradient {
+  width: 400px;
+  height: 400px;
+  background-image: linear-gradient(45deg, red, black);
+  margin: auto;
+}
+.grpr {
+  width: 450px;
+  height: 300px;
+  color: white;
+  background-image: linear-gradient(135deg, #f403d1, #64b5f6);
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: cursive;
+  margin: 30px auto;
+  position: relative;
+}
+.grpr::before {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(135deg, #f403d1, #64b5f6);
+  top: 26px;
+  left: 26px;
+  width: 450px;
+  height: 300px;
+  z-index: -1;
+  filter: blur(25px);
+  transform: scale(0.9);
+}
+.grpr1 {
+  width: 450px;
+  height: 300px;
+  color: white;
+  background-image: linear-gradient(135deg, #ffcc75, #f428d3);
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: cursive;
+  margin: 30px auto;
+  position: relative;
+}
+.grpr1::before {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(135deg, #ffcc75, #f428d3);
+  top: 26px;
+  left: 26px;
+  width: 450px;
+  height: 300px;
+  z-index: -1;
+  filter: blur(25px);
+  border-radius: 10px;
+  transform: scale(0.9);
+}
+
+.parcar {
+  background-color: #010615;
+  padding: 20px;
+  color: white;
+  font-family: sans-serif;
+}
+.box22 {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: #060c21;
+  margin: 70px auto;
+  padding: 20px;
+
+  background-color: #010615;
+  padding: 20px;
+  color: white;
+  font-family: sans-serif;
+}
+
+.box22::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  bottom: -2px;
+  right: -2px;
+  z-index: -1;
+  background: linear-gradient(235deg, #772aff, #ffffff, #2196f3);
+}
+.box22::after {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  bottom: -3px;
+  right: -3px;
+  filter: blur(40px);
+  z-index: -1;
+  background: linear-gradient(235deg, #772aff, #ffffff, #2196f3);
+}
+
+.glass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+/* backgroun-clip:property specifies how far the background(color or image) shlould 
+                  extend in an element
+        * Border-Box : the background extend behind a border
+        * padding-box : exdends to the inside the edges of the border
+        * content-box : exdends to be behid the content only
+        * text : for fill the text only but you have to use color transparent
+         */
+.clip {
+  font-size: 70px;
+  text-align: center;
+  font-weight: 900;
+  font-family: "Big Shoulders Text", cursive;
+}
+.clip div {
+  border: 7px black dotted;
+  width: 70%;
+  margin: 40px auto;
+  padding: 20px;
+}
+.bb {
+  -webkit-background-clip: border-box;
+  background-image: url(mountains-55067__340.webp);
+}
+.cb {
+  -webkit-background-clip: content-box;
+  background-image: url(mountains-55067__340.webp);
+}
+.pb {
+  -webkit-background-clip: padding-box;
+  background-image: url(mountains-55067__340.webp);
+}
+
+.tx {
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: url(mountains-55067__340.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 300px;
+}
+.grtex {
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(90deg, #00dbde, #fc00ff);
+  font-size: 130px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ************************GRID******************************* 
+-------------PARENT 
+- Display : Grid ==> for make an element behave as a grid container
+ or you can use inline-grid , and make grid items placed in column
+ and rows
+
+# Grid-Template-Columns : Property specifies the number of columns in you grid layout, 
+   and it can define the width of each column , SYNTAX :
+    grid-template-columns: size1 size2 size3 ... (px,perctage,calc,mix,all,auto,fr)
+    you can use repeat(n-columns,size), auto like fr if each one work alone (not-togheter)
+   but if the grid meet auto , so auto will take a space that is just enought for 
+   container because it's shy but fr will take all space for fill the vw 
+ 
+
+# Grid-Template-Rows :property specifes the number of each row
+
+
+# Gap : (fajwe) is a shorthand for row-gap and column-gap
+
+# Justify-content : used to align the whole grid inside the container
+    * start :
+    * end:
+    * space-between : 
+    * space-around : 
+    * space-evenly : 
+    NOTE : the total of width grid items has to be less than the width of the grid container
+    for this property has any effect
+# align-content : used to align items vertically in the container
+# Grid-Template-Areas : place the items every row is defined by {"name name . . ."}
+point represents a grid with no name , this property make the columns and rows based on 
+names , so it is all
+ 
+--------------CHILD
+# Grid-Column : specifies for place an item, this is a shorthand for grid-column-start and
+       grid-column-end , syntax : n-start/n-end
+
+# Grid-Row : shorthand for grid-row-start and grid-row-end SYNTAX the same grid-column
+
+NOTE : you can refer to the two previous property by numbers you use keyword "span"
+       1/span 2 : which mean start in 1 and combines two
+
+# Grid-Area : used to assign the names for grid items or a shorthand for two previous property
+ SYNTAX : grid-row-start/grid-column-start/grid-row-end/grid-column-end
+# Grid-Responsive : 
+ */
+.gtc,
+.gtr,
+.gp {
+  display: grid;
+  font-size: 25px;
+  color: white;
+}
+.gtc {
+  grid-template-columns: repeat(2, minmax(200px, auto));
+}
+.gtr {
+  grid-auto-rows: minmax(250px, auto);
+  grid-template-columns: repeat(4, auto);
+}
+.gtc div,
+.gtr div,
+.gp div {
+  background-color: #010615;
+  text-align: center;
+}
+.gp {
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 10px;
+  column-gap: 7px;
+}
+.jcc,
+.jcs,
+.jce,
+.jcsb,
+.jcse,
+.jcsa {
+  padding: 10px;
+  background-color: dodgerblue;
+  display: grid;
+  text-align: center;
+  font-weight: bold;
+  grid-template-columns: repeat(3, 150px);
+  justify-content: center;
+}
+.jcc div,
+.jcs div,
+.jce div,
+.jcsb div,
+.jcsa div,
+.jcse div {
+  background-color: #64b5f6;
+  font-size: 20px;
+  height: 70px;
+  width: 70px;
+}
+.jcse {
+  justify-content: space-evenly;
+}
+.jcsb {
+  justify-content: space-between;
+}
+.jcsa {
+  justify-content: space-around;
+}
+.jcc {
+  justify-content: center;
+}
+.jce {
+  justify-content: end;
+}
+.jcs {
+  justify-content: start;
+}
+.as,
+.ae,
+.ac,
+.asb,
+.asa,
+.ase {
+  background-color: dodgerblue;
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  justify-content: space-evenly;
+  gap: 10px;
+  padding: 5px;
+  height: 300px;
+  text-align: center;
+}
+.as div,
+.ae div,
+.ac div,
+.asb div,
+.asa div,
+.ase div {
+  width: 25%;
+  padding: 20px;
+  background-color: #64b5f6;
+  font-size: 20px;
+  font-weight: bold;
+}
+.as {
+  align-content: start;
+}
+.ae {
+  align-content: end;
+}
+.ac {
+  align-content: center;
+}
+.asb {
+  align-content: space-between;
+}
+.asa {
+  align-content: space-around;
+}
+.ase {
+  align-content: space-evenly;
+}
+.gc,
+.gr,
+.ga {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #b3dd90;
+  font-size: 35px;
+  gap: 10px;
+  color: white;
+  text-align: center;
+}
+.b {
+  background-color: rgb(72, 95, 72);
+  min-height: 100px;
+}
+.b1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.b4 {
+  grid-column: 2/4;
+}
+.b5 {
+  grid-column: 1/3;
+}
+.b7 {
+  grid-column: 1 / span 3;
+}
+.b8 {
+  grid-column: span 2;
+}
+.r1 {
+  grid-column: span 3;
+}
+.r2 {
+  grid-row: span 4;
+}
+.gr {
+  grid-template-columns: repeat(4, auto);
+  grid-auto-rows: 1fr;
+}
+.r3 {
+  grid-row: 3/4;
+  grid-column: span 2;
+}
+.r6 {
+  grid-row: span 2;
+}
+.r7 {
+  grid-row: span 2;
+}
+.r8 {
+  grid-row: span 2;
+  grid-column: 2/4;
+}
+.ga div {
+  background-color: rgb(109, 158, 68);
+}
+.ga {
+  grid-auto-rows: 1fr;
+}
+.a1 {
+  grid-area: 1/1 / span 2 / span 2;
+  grid-area: "a1";
+}
+.a3 {
+  grid-area: 2/3/4/3;
+  grid-area: "a3";
+}
+.git {
+  overflow-x: hidden;
+  height: 600px;
+  display: grid;
+  grid-auto-rows: minmax(150px, auto);
+  padding: 10px;
+  grid-template-areas:
+    "one one one one one"
+    "two two three three three"
+    "two two four four five"
+    "two two four four five"
+    "two two six six six"
+    "seven seven . . eight"
+    "nine nine nine nine nine";
+  gap: 5px;
+}
+.t {
+  background-color: rgb(87, 87, 46);
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
+.t1 {
+  grid-area: one;
+}
+.t2 {
+  grid-area: two;
+}
+
+.t3 {
+  grid-area: three;
+}
+.t4 {
+  grid-area: four;
+}
+.t5 {
+  grid-area: five;
+}
+.t6 {
+  grid-area: six;
+}
+.t7 {
+  grid-area: seven;
+}
+.t8 {
+  grid-area: eight;
+}
+.t9 {
+  grid-area: nine;
+}

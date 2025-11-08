@@ -1,0 +1,45 @@
+for speak with computers we have to learn a programing language that is crafting by english
+language and the computer doesn't know our language , so here we need a compiler that know english and
+binary ==> COMPILER
+--------------------------
+For make a C FILE the file must be with .C extension
+---------------------------------------SYNTAX----------------------------------------------------------
+  int main(void){            | that is equal "when green flak clicked " in scrath
+            commands         |
+  }                          |
+
+in {} you write commands but you have to declare where libary you get the commands , so syntax become
+
+ #include <stdio.h>
+ int main(void){
+    printf("Hello,world");
+ }
+ The question is "how can I start my programme"
+ Answear : you have to transform the file to a file the conputer understand , so in terminal write
+  $ make file-name (without extension)
+  $ ./file-name (also whitout ext)
+  in the file that you create there is binary code
+
+Function PRINTF("write what you want") ; for return to new line "\n"; 'back slash n"
+
+----------------------------------------------------------------------------- DATA-Types---------------------------------------------------------------------------------------------------------------
+
+             1. bool (true,false) ==> 1 byte
+             2. int (integer)   ==> 4 byte
+             3. long   ==> 8 byte
+             4. float  ==> 4 byte
+             5. double ==> 8 byte
+             6. char   ==> 1 byte
+             7. string ==> ? byte (we dont know , it depends ! )(it's not a type of date )
+
+
+
+
+
+
+
+
+
+
+
+

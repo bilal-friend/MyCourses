@@ -1,0 +1,36 @@
+.o,.d,.t{
+    display: inline-block;
+    outline: black 5px solid;
+    padding: 50px;
+    margin:  25px;
+    background-color: rgb(167, 164, 161);
+}
+.o{
+    border: 5px red solid;
+   
+}
+.d {
+    border: 5px solid;
+    border-color:blue green ;
+}
+.t{
+    border: dotted 5px ;
+    border-color:red green blue yellow ;
+}
+.i,.a,.b{
+    background-color: #eee;
+    padding: 20px ;
+    font-size: 33px;
+    margin: 25px auto;
+    width: 400px;
+    outline: 7px solid #eee;
+}
+.b {
+   visibility: hidden;
+}
+.a{
+    border-left: solid #e91e63 10px;
+}
+.i{
+    border-left: #009688 solid 10px ;
+}

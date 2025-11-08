@@ -1,0 +1,14 @@
+ #include <stdio.h>
+ #include <cs50.h>
+    int get_age(int X);
+
+    int main (void){
+    int age=get_int("enter you age : ");
+    int days=get_age(age);
+      printf("So , You live %i days and %i hours \n",days,get_age(age)*24);
+
+    }
+
+     int get_age(int X){
+     return X*365;
+ }

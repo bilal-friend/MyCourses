@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "author": "Bilal",
+    "category": "self development",
+    "title": "Title One",
+    "content": "content of first book"
+  },
+  {
+    "id": 2,
+    "author": "Omar",
+    "category": "History",
+    "title": "Title Two",
+    "content": "content of second book"
+  },
+  {
+    "id": 3,
+    "author": "Ahemd",
+    "category": "Palestine",
+    "title": "Title Three",
+    "content": "content of third book"
+  },
+  {
+    "id": 4,
+    "author": "Osama",
+    "category": "Programming",
+    "title": "Title four",
+    "content": "content of fourth book"
+  },
+  {
+    "id": 5,
+    "author": "Adam",
+    "category": "Islamic Education",
+    "title": "Title five",
+    "content": "content of fifth book"
+  }
+]
